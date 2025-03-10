@@ -194,3 +194,59 @@ footer {
         width: 100%;
     }
 }
+
+.social-links a {
+    display: block;
+    margin: 10px 0;
+    text-decoration: none;
+    color: #333;
+}
+
+.social-links i {
+    margin-right: 8px;
+    width: 20px;
+    text-align: center;
+}
+
+/* Optional: Add specific colors for each platform */
+.fa-telegram-plane {
+    color: #0088cc;
+}
+
+.fa-facebook {
+    color: #3b5998;
+}
+
+.fa-instagram {
+    color: #e1306c;
+}
+
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    align-items: stretch; /* Ensures all items have the same height */
+}
+
+.image-item-instructor {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Ensures even spacing */
+    height: 100%; /* Ensures it stretches */
+}
+
+.image-item-instructor img {
+    width: 240px; /* Maintains aspect ratio */
+    max-height: 240px; /* Adjust this based on your layout */
+    object-fit: cover; /* Ensures images are the same height */
+}
+
+.image-item-instructor p {
+    text-align: center;
+    font-size: 1.5em; /* Adjust size as needed */
+    font-weight: bold;
+    margin-top: 10px;
+}
