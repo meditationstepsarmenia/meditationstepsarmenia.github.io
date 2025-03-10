@@ -35,47 +35,49 @@ h2 {
     letter-spacing: 2px;
 }
 
-
-/* Styling for the single meditation image (Prevent it from following flexbox rules) */
+/* Single meditation image */
 .single-image {
-	text-align: center; /* Center the single image */
-	margin-top: 20px;
-}
-.single-image img {
-	width: 700px; /* Adjust as needed */
-	height: auto;
+    text-align: center;
+    margin-top: 20px;
 }
 
-/* Flexbox for side-by-side images */
+.single-image img {
+    width: 700px;
+    height: auto;
+}
+
+/* Image container and items */
 .image-container {
-	display: flex;
-	justify-content: center; /* Center the images */
-	gap: 70px; /* Space between images */
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 70px;
     margin-bottom: 30px;
 }
+
 .image-item {
-	text-align: center; /* Centers the text below the image */
-}
-.image-item img {
-	width: 300px; /* Adjust the image size */
-	height: auto;
+    text-align: center;
 }
 
+/* Shared image styles */
+.image-container img,
+.single-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.image-item img {
+    width: 300px;
+}
+
+/* Description text */
 .description {
     text-align: center;
     margin-bottom: 30px;
     font-size: 1.1em;
     color: #666;
     padding: 0 20px;
-}
-
-
-.image-container img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .social-links {
@@ -104,4 +106,91 @@ footer {
     border-radius: 10px;
     font-size: 0.9em;
     color: #7f8c8d;
+}
+
+/* Language Header */
+.language-header {
+    display: flex;
+    justify-content: flex-end; /* Align flags to the right */
+    align-items: center;
+    height: 50px; /* Small height */
+    padding: 0 20px;
+    background-color: #f5f5f5; /* Light gray background */
+}
+
+.language-item {
+    position: relative;
+    cursor: pointer;
+    margin-left: 15px; /* Space between flags */
+}
+
+.language-item img {
+    width: 30px; /* Slightly larger than the source for clarity */
+    height: auto;
+}
+
+/* Gray circle for selected language */
+.language-item.selected::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 28px; /* Slightly larger than flag */
+    height: 28px;
+    background-color: rgba(128, 128, 128, 0.3); /* Semi-transparent gray */
+    border-radius: 50%;
+    z-index: -1; /* Behind the flag */
+}
+
+/* Your existing styles (optimized) */
+.single-image {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.single-image img {
+    width: min(700px, 90%);
+    height: auto;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 30px;
+}
+
+.image-item {
+    text-align: center;
+}
+
+.image-item img {
+    width: min(300px, 100%);
+    height: auto;
+}
+
+.image-container img,
+.single-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.description {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: clamp(1em, 1.1em, 1.2em);
+    color: #666;
+    padding: 0 1rem;
+}
+
+@media (max-width: 768px) {
+    .image-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .single-image img {
+        width: 100%;
+    }
 }
