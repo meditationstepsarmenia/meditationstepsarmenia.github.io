@@ -15,28 +15,40 @@ const socialLinksInstagram = Array.from(document.querySelector('.instagram-page'
 const socialLinksTelegrameGroup = Array.from(document.querySelector('.telegram-group').childNodes)
     .find(node => node.nodeType === Node.TEXT_NODE);
 const instructors = document.querySelector('.instructors');
-const instructor_narek = document.querySelector('.instructor_narek');
-const instructor_vardan = document.querySelector('.instructor_vardan');
-const instructor_davit = document.querySelector('.instructor_davit');
+const instructorNarek = document.querySelector('.instructor_narek');
+const instructorVardan = document.querySelector('.instructor_vardan');
+const instructorDavit = document.querySelector('.instructor_davit');
 const footer = document.querySelector('footer');
 
 let currentLanguage = 'en';
 
 // Update content based on language
 const updateContent = (lang) => {
-    mainHeader.textContent = tr.main_header[lang];
-    whoWeAreHeader.textContent = tr.who_we_are_header[lang];
-    whoWeAreDesc.textContent = tr.who_we_are_desc[lang];
-    socialLinksHeader.textContent = tr.social_links.header[lang];
-    socialLinksTelegramChannel.textContent = tr.social_links.telegram_channel[lang];
-    socialLinksFacebook.textContent = tr.social_links.facebook[lang];
-    socialLinksInstagram.textContent = tr.social_links.instagram[lang];
-    socialLinksTelegrameGroup.textContent = tr.social_links.telegram_group[lang];
-    instructors.textContent = tr.instructors[lang];
-    instructor_narek.textContent = tr.instructor_narek[lang];
-    instructor_vardan.textContent = tr.instructor_vardan[lang];
-    instructor_davit.textContent = tr.instructor_davit[lang];
-    footer.textContent = tr.footer[lang];
+    let elementsAndValues = [
+        {e: mainHeader, v: tr.main_header[lang]},
+        {e: whoWeAreHeader, v: tr.who_we_are_header[lang]},
+        {e: whoWeAreDesc, v: tr.who_we_are_desc[lang]},
+        {e: socialLinksHeader, v: tr.social_links.header[lang]},
+        {e: socialLinksTelegramChannel, v: tr.social_links.telegram_channel[lang]},
+        {e: socialLinksFacebook, v: tr.social_links.facebook[lang]},
+        {e: socialLinksInstagram, v: tr.social_links.instagram[lang]},
+        {e: socialLinksTelegrameGroup, v: tr.social_links.telegram_group[lang]},
+        {e: instructors, v: tr.instructors[lang]},
+        {e: instructorNarek, v: tr.instructor_narek[lang]},
+        {e: instructorVardan, v: tr.instructor_vardan[lang]},
+        {e: instructorDavit, v: tr.instructor_davit[lang]},
+        {e: footer, v: tr.footer[lang]},
+    ]
+
+    for (const elementAndValue of elementsAndValues) {
+        const value = elementAndValue.v
+        if (value)
+            try {
+                elementAndValue.e.textContent = value
+            } catch {
+            console.log(`failed to update text value ${elementAndValue.v}`)
+            }
+    }
 };
 
 // Initialize default language (English)
