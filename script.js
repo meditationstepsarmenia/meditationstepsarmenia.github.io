@@ -20,7 +20,7 @@ const instructorVardan = document.querySelector('.instructor_vardan');
 const instructorDavit = document.querySelector('.instructor_davit');
 const footer = document.querySelector('footer');
 
-let currentLanguage = 'en';
+let currentLanguage = 'am';
 
 // Update content based on language
 const updateContent = (lang) => {

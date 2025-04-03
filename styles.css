@@ -125,7 +125,7 @@ footer {
 }
 
 .language-item img {
-    width: 30px; /* Slightly larger than the source for clarity */
+    width: 22px; /* Slightly larger than the source for clarity */
     height: auto;
 }
 
@@ -242,6 +242,7 @@ footer {
     width: 240px; /* Maintains aspect ratio */
     max-height: 240px; /* Adjust this based on your layout */
     object-fit: cover; /* Ensures images are the same height */
+    border-radius: 50%; /* Makes it a circle */
 }
 
 .image-item-instructor p {
