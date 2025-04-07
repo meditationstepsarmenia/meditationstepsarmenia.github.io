@@ -4,6 +4,11 @@ export const tr = {
         ru: "Уроки Медитации Армения",
         am: "Մեդիտացիայի Դասեր Հայաստանում"
     },
+    events_header: {
+        en: "Upcoming еvents",
+        ru: "Ближайшие мероприятия",
+        am: "Գալիք իրադարձություններ"
+    },
     who_we_are_header: {
         en: "Who we are?",
         ru: "Кто мы?",
