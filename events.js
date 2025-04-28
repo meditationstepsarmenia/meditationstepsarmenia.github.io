@@ -15,6 +15,12 @@ const event_descriptions = {
         en: "✅Collective Meditation With Narek",
         ru: "✅Колективная медитация с Нарек",
         am: "✅Կոլեկտիվ մեդիտացիա Նարեկի հետ",
+    },
+    d2: {
+        id: `1${event_desc_id_suffix}`,
+        en: "✅Meditation & Yoga With Narek",
+        ru: "✅Медитация и Йога с Нареком",
+        am: "Մեդիտացիա և Յոգա Նարեկի հետ",
     }
 }
 
@@ -22,20 +28,14 @@ const events = [
     {
         image: img_2,
         link: fb_event_link,
-        dateTime: `2025-04-13${default_time}`,
-        description: event_descriptions.d1,
+        dateTime: `2025-05-04${default_time}`,
+        description: event_descriptions.d2,
         location: location_yfa,
-    // },{
-    //     image: img_2,
-    //     link: fb_event_link,
-    //     dateTime: `2025-04-20${default_time}`,
-    //     description: event_descriptions.d1,
-    //     location: location_yfa,
-    // },{
-    //     image: img_2,
-    //     link: fb_event_link,
-    //     dateTime: `2025-04-27${default_time}`,
-    //     description: event_descriptions.d1,
-    //     location: location_yfa,
+    },{
+        image: img_2,
+        link: fb_event_link,
+        dateTime: `2025-05-11${default_time}`,
+        description: event_descriptions.d2,
+        location: location_yfa,
     },
 ];
