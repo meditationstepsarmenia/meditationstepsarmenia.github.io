@@ -38,13 +38,13 @@ const events = [
     {
         image: img_2,
         link: fb_event_link,
-        dateTime: `2025-09-28${default_time}`,
+        dateTime: `2025-10-12${default_time}`,
         description: event_descriptions.d3,
         location: location_msa,
     },{
         image: img_2,
         link: fb_event_link,
-        dateTime: `2025-10-05${default_time}`,
+        dateTime: `2025-10-19${default_time}`,
         description: event_descriptions.d3,
         location: location_msa,
     },
