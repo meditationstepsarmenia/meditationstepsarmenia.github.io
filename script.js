@@ -10,14 +10,14 @@ const mainHeader = document.querySelector('.main-header');
 const whoWeAreHeader = document.querySelector('.who-we-are-header');
 const whoWeAreDesc = document.querySelector('.who-we-are-desc');
 const socialLinksHeader = document.querySelector('.social-links-header');
-const socialLinksTelegramChannel = Array.from(document.querySelector('.telegram-channel').childNodes)
-    .find(node => node.nodeType === Node.TEXT_NODE);
-const socialLinksFacebook = Array.from(document.querySelector('.facebook-page').childNodes)
-    .find(node => node.nodeType === Node.TEXT_NODE);
-const socialLinksInstagram = Array.from(document.querySelector('.instagram-page').childNodes)
-    .find(node => node.nodeType === Node.TEXT_NODE);
-const socialLinksTelegrameGroup = Array.from(document.querySelector('.telegram-group').childNodes)
-    .find(node => node.nodeType === Node.TEXT_NODE);
+const socialLinksTelegramChannel = document.querySelector('.telegram-channel .social-card__label')
+    || Array.from(document.querySelector('.telegram-channel').childNodes).find(node => node.nodeType === Node.TEXT_NODE);
+const socialLinksFacebook = document.querySelector('.facebook-page .social-card__label')
+    || Array.from(document.querySelector('.facebook-page').childNodes).find(node => node.nodeType === Node.TEXT_NODE);
+const socialLinksInstagram = document.querySelector('.instagram-page .social-card__label')
+    || Array.from(document.querySelector('.instagram-page').childNodes).find(node => node.nodeType === Node.TEXT_NODE);
+const socialLinksTelegrameGroup = document.querySelector('.telegram-group .social-card__label')
+    || Array.from(document.querySelector('.telegram-group').childNodes).find(node => node.nodeType === Node.TEXT_NODE);
 const instructors = document.querySelector('.instructors');
 const instructorNarek = document.querySelector('.instructor_narek');
 const instructorVardan = document.querySelector('.instructor_vardan');

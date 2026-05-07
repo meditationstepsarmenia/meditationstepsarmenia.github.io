@@ -3,75 +3,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1a1430">
+    <meta name="description" content="Meditation Steps Armenia — a community sharing the wisdom and practice of Rajadhiraja yoga and meditation.">
     <title>Meditation Steps Armenia</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Animated background -->
+    <div class="cosmos" aria-hidden="true">
+        <div class="cosmos__gradient"></div>
+        <div class="cosmos__mandala cosmos__mandala--one">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" stroke="currentColor" stroke-width="0.5">
+                    <circle cx="100" cy="100" r="40"/>
+                    <circle cx="100" cy="100" r="60"/>
+                    <circle cx="100" cy="100" r="80"/>
+                    <circle cx="100" cy="100" r="95"/>
+                    <g>
+                        <circle cx="100" cy="40" r="20"/>
+                        <circle cx="100" cy="160" r="20"/>
+                        <circle cx="40" cy="100" r="20"/>
+                        <circle cx="160" cy="100" r="20"/>
+                        <circle cx="58" cy="58" r="20"/>
+                        <circle cx="142" cy="142" r="20"/>
+                        <circle cx="58" cy="142" r="20"/>
+                        <circle cx="142" cy="58" r="20"/>
+                    </g>
+                </g>
+            </svg>
+        </div>
+        <div class="cosmos__mandala cosmos__mandala--two">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <g fill="none" stroke="currentColor" stroke-width="0.4">
+                    <polygon points="100,10 190,100 100,190 10,100"/>
+                    <polygon points="100,30 170,100 100,170 30,100"/>
+                    <polygon points="100,50 150,100 100,150 50,100"/>
+                    <circle cx="100" cy="100" r="70"/>
+                    <circle cx="100" cy="100" r="50"/>
+                    <circle cx="100" cy="100" r="30"/>
+                </g>
+            </svg>
+        </div>
+        <div class="cosmos__orb cosmos__orb--one"></div>
+        <div class="cosmos__orb cosmos__orb--two"></div>
+        <div class="cosmos__orb cosmos__orb--three"></div>
+    </div>
+
+    <!-- Language Selector -->
     <header class="language-header">
-        <div class="language-item" data-lang="en">
-            <img src="https://flagcdn.com/16x12/gb.png" alt="English">
-        </div>
-        <div class="language-item" data-lang="ru">
-            <img src="https://flagcdn.com/16x12/ru.png" alt="Russian">
-        </div>
-        <div class="language-item" data-lang="am">
-            <img src="https://flagcdn.com/16x12/am.png" alt="Armenian">
+        <div class="language-selector">
+            <div class="language-item" data-lang="en" title="English">
+                <img src="https://flagcdn.com/24x18/gb.png" alt="English">
+            </div>
+            <div class="language-item" data-lang="ru" title="Русский">
+                <img src="https://flagcdn.com/24x18/ru.png" alt="Russian">
+            </div>
+            <div class="language-item" data-lang="am" title="Հայերեն">
+                <img src="https://flagcdn.com/24x18/am.png" alt="Armenian">
+            </div>
         </div>
     </header>
-    <div class="container">
-        <div class="single-image">
-            <img src="images/meditation-image.jpg" alt="Meditation Steps Armenia">
-        </div>
-        <h1 class="main-header">Meditation Steps Armenia</h1>
 
-        <h2 class="social-links-header">Social Media Links ✨</h2>
-        
-        <!-- Add Font Awesome CDN in your <head> section -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-        <div class="social-links">
-            <a href="https://t.me/meditationstepsarmenia" target="_blank" class="telegram-channel">
-                <i class="fab fa-telegram-plane"></i>
-            </a>
-            <a href="https://www.facebook.com/profile.php?id=100045070191879" target="_blank" class="facebook-page">
-                <i class="fab fa-facebook"></i>
-            </a>
-            <a href="https://www.instagram.com/meditationsteps_armenia/" target="_blank" class="instagram-page">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://t.me/+H6SYQxOiGNYxMTMy" target="_blank" class="telegram-group">
-                <i class="fab fa-telegram-plane"></i>
-            </a>
-        </div>
-
-        <div id="events-container"></div>
-        <h2 class="who-we-are-header">Who are we?</h2>
-        <p class="who-we-are-desc">We are a community of Rajadhiraja yoga enthusiasts dedicated to spreading the timeless wisdom of yoga. Each week, we hold in-person, donation-based classes, keeping them essentially free to ensure maximum accessibility for everyone. Our sessions include dynamic and static meditations, asanas (yoga postures), yogic dances, and songs, as well as Satsang (spiritual discussions) and lectures.
-We warmly invite you to join us on this unending journey of self-discovery, growth, and global neo-humanistic elevation—together, we’re shaping a more conscious tomorrow. At the heart of our practice is a deep belief in nurturing all three facets of human life: the physical, the mental, and the spiritual.
-Come experience it for yourself! Find our event schedules on the social media channels listed below.</p>
-
-        <h1 class="instructors">Our Instructors</h1>
-		<div class="image-container">
-            <div class="image-item-instructor">
-                <img src="images/instructor_narek.jpg" alt="Image 1">
-                <p class="instructor_narek">Narek</p>
+    <main class="container">
+        <!-- Hero -->
+        <section class="hero reveal">
+            <div class="hero__visual">
+                <div class="hero__frame">
+                    <div class="single-image">
+                        <img src="images/meditation-image.jpg" alt="Meditation Steps Armenia">
+                    </div>
+                    <div class="hero__glow"></div>
+                </div>
             </div>
-            <div class="image-item-instructor">
-                <img src="images/instructor_vardan.jpg" alt="Image 2">
-                <p class="instructor_vardan">Vardan</p>
+            <div class="hero__copy">
+                <span class="eyebrow">
+                    <span class="eyebrow__dot"></span>
+                    Rajadhiraja Yoga · Armenia
+                </span>
+                <h1 class="main-header">Meditation Steps Armenia</h1>
+                <p class="hero__tagline">A community walking the path of self-discovery — together.</p>
+                <a href="#about" class="hero__scroll" aria-label="Scroll to content">
+                    <span class="hero__scroll-label">Scroll</span>
+                    <span class="hero__scroll-chevrons" aria-hidden="true">
+                        <i class="fas fa-chevron-down"></i>
+                        <i class="fas fa-chevron-down"></i>
+                    </span>
+                </a>
             </div>
-        </div>
-        <div class="image-container">
-            <div class="image-item-instructor">
-                <img src="images/instructor_davit.jpg" alt="Image 3">
-                <p class="instructor_davit">Davit</p>
+        </section>
+
+        <!-- Social Links -->
+        <section class="section reveal">
+            <h2 class="social-links-header">Social Media Links</h2>
+            <div class="social-links">
+                <a href="https://t.me/meditationstepsarmenia" target="_blank" rel="noopener" class="social-card telegram-channel" style="--brand:#0088cc;">
+                    <span class="social-card__icon"><i class="fab fa-telegram-plane"></i></span>
+                    <span class="social-card__label">Telegram Channel</span>
+                    <span class="social-card__arrow"><i class="fas fa-arrow-up-right-from-square"></i></span>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100045070191879" target="_blank" rel="noopener" class="social-card facebook-page" style="--brand:#1877f2;">
+                    <span class="social-card__icon"><i class="fab fa-facebook-f"></i></span>
+                    <span class="social-card__label">Facebook</span>
+                    <span class="social-card__arrow"><i class="fas fa-arrow-up-right-from-square"></i></span>
+                </a>
+                <a href="https://www.instagram.com/meditationsteps_armenia/" target="_blank" rel="noopener" class="social-card instagram-page" style="--brand:#e1306c;">
+                    <span class="social-card__icon"><i class="fab fa-instagram"></i></span>
+                    <span class="social-card__label">Instagram</span>
+                    <span class="social-card__arrow"><i class="fas fa-arrow-up-right-from-square"></i></span>
+                </a>
+                <a href="https://t.me/+H6SYQxOiGNYxMTMy" target="_blank" rel="noopener" class="social-card telegram-group" style="--brand:#27a0d8;">
+                    <span class="social-card__icon"><i class="fab fa-telegram-plane"></i></span>
+                    <span class="social-card__label">Telegram Group</span>
+                    <span class="social-card__arrow"><i class="fas fa-arrow-up-right-from-square"></i></span>
+                </a>
             </div>
-        </div>
+        </section>
+
+        <!-- Events -->
+        <section class="section reveal">
+            <div id="events-container"></div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="section section--about reveal">
+            <div class="section__decor">
+                <i class="fas fa-spa"></i>
+            </div>
+            <h2 class="who-we-are-header">Who are we?</h2>
+            <p class="who-we-are-desc">We are a community of Rajadhiraja yoga enthusiasts dedicated to spreading the timeless wisdom of yoga.</p>
+        </section>
+
+        <!-- Instructors -->
+        <section class="section section--instructors reveal">
+            <h1 class="instructors">Our Instructors</h1>
+            <div class="image-container">
+                <article class="image-item-instructor">
+                    <div class="instructor-frame">
+                        <img src="images/instructor_narek.jpg" alt="Narek">
+                        <span class="instructor-frame__ring"></span>
+                    </div>
+                    <p class="instructor_narek">Narek</p>
+                </article>
+                <article class="image-item-instructor is-disabled" hidden>
+                    <div class="instructor-frame">
+                        <img src="images/instructor_vardan.jpg" alt="Vardan">
+                        <span class="instructor-frame__ring"></span>
+                    </div>
+                    <p class="instructor_vardan">Vardan</p>
+                </article>
+                <article class="image-item-instructor">
+                    <div class="instructor-frame">
+                        <img src="images/instructor_davit.jpg" alt="Davit">
+                        <span class="instructor-frame__ring"></span>
+                    </div>
+                    <p class="instructor_davit">Davit</p>
+                </article>
+            </div>
+        </section>
+
         <footer>
+            <div class="footer__ornament">
+                <span></span>
+                <i class="fas fa-om"></i>
+                <span></span>
+            </div>
             <p>Kindly, Meditation Steps Armenia team.</p>
         </footer>
-    </div>
+    </main>
+
     <script src="events.js"></script>
     <script type="module" src="script.js"></script>
+    <script>
+        // Scroll-reveal animations
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // Re-observe dynamically created event cards
+        const eventsContainer = document.getElementById('events-container');
+        if (eventsContainer) {
+            const mo = new MutationObserver(() => {
+                document.querySelectorAll('.event-item:not(.reveal-init)').forEach((el, i) => {
+                    el.classList.add('reveal-init');
+                    el.style.setProperty('--reveal-delay', `${i * 80}ms`);
+                    revealObserver.observe(el);
+                    el.classList.add('reveal');
+                });
+            });
+            mo.observe(eventsContainer, { childList: true, subtree: true });
+        }
+
+        // Parallax on hero image
+        const heroFrame = document.querySelector('.hero__frame');
+        if (heroFrame && window.matchMedia('(pointer: fine)').matches) {
+            heroFrame.addEventListener('mousemove', (e) => {
+                const r = heroFrame.getBoundingClientRect();
+                const x = (e.clientX - r.left) / r.width - 0.5;
+                const y = (e.clientY - r.top) / r.height - 0.5;
+                heroFrame.style.setProperty('--rx', `${y * -6}deg`);
+                heroFrame.style.setProperty('--ry', `${x * 8}deg`);
+            });
+            heroFrame.addEventListener('mouseleave', () => {
+                heroFrame.style.setProperty('--rx', '0deg');
+                heroFrame.style.setProperty('--ry', '0deg');
+            });
+        }
+
+        // Soft cursor glow on pointer-fine devices
+        if (window.matchMedia('(pointer: fine)').matches) {
+            const glow = document.createElement('div');
+            glow.className = 'cursor-glow';
+            document.body.appendChild(glow);
+            window.addEventListener('mousemove', (e) => {
+                glow.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+            });
+        }
+    </script>
 </body>
 </html>

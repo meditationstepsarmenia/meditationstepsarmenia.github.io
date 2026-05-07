@@ -10,9 +10,9 @@ export const tr = {
         am: "Գալիք իրադարձություններ"
     },
     who_we_are_header: {
-        en: "About us (1 min read)",
-        ru: "О нас (1 минута чтения)",
-        am: "Մեր մասին (կարդալ 1 րոպե)",
+        en: "About us",
+        ru: "О нас",
+        am: "Մեր մասին",
     },
     who_we_are_desc: {
         en: `Hello, dear friend! 🙏
