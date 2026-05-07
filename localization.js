@@ -4,6 +4,11 @@ export const tr = {
         ru: "Уроки Медитации Армения",
         am: "Մեդիտացիայի Դասեր Հայաստանում"
     },
+    hero_tagline: {
+        en: "A community walking the path of self-discovery — together.",
+        ru: "Сообщество, шагающее по пути самопознания — вместе.",
+        am: "Համայնք, որ քայլում է ինքնաճանաչման ճանապարհով՝ միասին։",
+    },
     events_header: {
         en: "Upcoming еvents",
         ru: "Ближайшие мероприятия",
@@ -65,6 +70,16 @@ We warmly invite you to join us on this path of self-discovery and spiritual gro
             en: "Telegram Group ",
             ru: "Телеграм Группа",
             am: "Տելեգրամի Խումբ",
+        },
+        youtube_armenian: {
+            en: "YouTube (Armenian)",
+            ru: "YouTube (Армянский)",
+            am: "YouTube (Հայերեն)",
+        },
+        youtube_yoga_science: {
+            en: "Yoga Science (Eng/Rus)",
+            ru: "Yoga Science (Англ/Рус)",
+            am: "Yoga Science (Անգլ/Ռուս)",
         },
     },
     instructors:  {

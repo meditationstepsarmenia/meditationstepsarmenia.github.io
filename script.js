@@ -7,6 +7,7 @@ const upcomingEvents = events
 // Select DOM elements
 const languageItems = document.querySelectorAll('.language-item');
 const mainHeader = document.querySelector('.main-header');
+const heroTagline = document.querySelector('.hero__tagline');
 const whoWeAreHeader = document.querySelector('.who-we-are-header');
 const whoWeAreDesc = document.querySelector('.who-we-are-desc');
 const socialLinksHeader = document.querySelector('.social-links-header');
@@ -18,6 +19,8 @@ const socialLinksInstagram = document.querySelector('.instagram-page .social-car
     || Array.from(document.querySelector('.instagram-page').childNodes).find(node => node.nodeType === Node.TEXT_NODE);
 const socialLinksTelegrameGroup = document.querySelector('.telegram-group .social-card__label')
     || Array.from(document.querySelector('.telegram-group').childNodes).find(node => node.nodeType === Node.TEXT_NODE);
+const socialLinksYoutubeArmenian = document.querySelector('.youtube-armenian .social-card__label');
+const socialLinksYoutubeYogaScience = document.querySelector('.youtube-yoga-science .social-card__label');
 const instructors = document.querySelector('.instructors');
 const instructorNarek = document.querySelector('.instructor_narek');
 const instructorVardan = document.querySelector('.instructor_vardan');
@@ -45,6 +48,7 @@ const updateContent = (lang) => {
     let elementsAndValues = [
         ...resultArray,
         {e: mainHeader, v: tr.main_header[lang]},
+        {e: heroTagline, v: tr.hero_tagline[lang]},
         {e: whoWeAreHeader, v: tr.who_we_are_header[lang]},
         {e: whoWeAreDesc, v: tr.who_we_are_desc[lang]},
         {e: socialLinksHeader, v: tr.social_links.header[lang]},
@@ -52,6 +56,8 @@ const updateContent = (lang) => {
         {e: socialLinksFacebook, v: tr.social_links.facebook[lang]},
         {e: socialLinksInstagram, v: tr.social_links.instagram[lang]},
         {e: socialLinksTelegrameGroup, v: tr.social_links.telegram_group[lang]},
+        {e: socialLinksYoutubeArmenian, v: tr.social_links.youtube_armenian[lang]},
+        {e: socialLinksYoutubeYogaScience, v: tr.social_links.youtube_yoga_science[lang]},
         {e: instructors, v: tr.instructors[lang]},
         {e: instructorNarek, v: tr.instructor_narek[lang]},
         {e: instructorVardan, v: tr.instructor_vardan[lang]},
