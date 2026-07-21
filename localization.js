@@ -47,9 +47,14 @@ We warmly invite you to join us on this path of self-discovery and spiritual gro
     },
     social_links: {
         header:  {
-            en: "Social Media Links 🔗 ",
-            ru: "Ссылки на Соцсети 🔗 ",
-            am: "Սոցցանցերի Հղումներ 🔗",
+            en: "Contact Us",
+            ru: "Наши контакты",
+            am: "Կոնտակտային հարթակներ",
+        },
+        video_header:  {
+            en: "Video Channels",
+            ru: "Видео Про Йогу",
+            am: "Հոլովակների շտեմարան",
         },
         telegram_channel:  {
             en: "Telegram Channel ",
@@ -72,14 +77,14 @@ We warmly invite you to join us on this path of self-discovery and spiritual gro
             am: "Տելեգրամի Խումբ",
         },
         youtube_armenian: {
-            en: "YouTube (Armenian)",
-            ru: "YouTube (Армянский)",
-            am: "YouTube (Հայերեն)",
+            en: "Yoga & Meditation (Armenian)",
+            ru: "Йога и Медитация (Армянский)",
+            am: "Յոգա և Մեդիտացիա (Հայերեն)",
         },
         youtube_yoga_science: {
             en: "Yoga Science (Eng/Rus)",
-            ru: "Yoga Science (Англ/Рус)",
-            am: "Yoga Science (Անգլ/Ռուս)",
+            ru: "Йога Наука (Англ/Рус)",
+            am: "Յոգական Գիտություն (Անգլ/Ռուս)",
         },
     },
     teachers: {

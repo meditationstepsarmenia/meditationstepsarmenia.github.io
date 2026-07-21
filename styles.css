@@ -535,9 +535,10 @@ h2::after {
 
 .social-links {
   display: grid;
+  /* Two columns max: 4 contact cards form a 2x2, 2 video cards one row. */
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
-  max-width: 880px;
+  max-width: 640px;
   margin-inline: auto;
 }
 

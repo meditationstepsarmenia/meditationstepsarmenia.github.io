@@ -11,6 +11,7 @@ const heroTagline = document.querySelector('.hero__tagline');
 const whoWeAreHeader = document.querySelector('.who-we-are-header');
 const whoWeAreDesc = document.querySelector('.who-we-are-desc');
 const socialLinksHeader = document.querySelector('.social-links-header');
+const videoLinksHeader = document.querySelector('.video-links-header');
 const socialLinksTelegramChannel = document.querySelector('.telegram-channel .social-card__label')
     || Array.from(document.querySelector('.telegram-channel').childNodes).find(node => node.nodeType === Node.TEXT_NODE);
 const socialLinksFacebook = document.querySelector('.facebook-page .social-card__label')
@@ -55,6 +56,7 @@ const updateContent = (lang) => {
         {e: whoWeAreHeader, v: tr.who_we_are_header[lang]},
         {e: whoWeAreDesc, v: tr.who_we_are_desc[lang]},
         {e: socialLinksHeader, v: tr.social_links.header[lang]},
+        {e: videoLinksHeader, v: tr.social_links.video_header[lang]},
         {e: socialLinksTelegramChannel, v: tr.social_links.telegram_channel[lang]},
         {e: socialLinksFacebook, v: tr.social_links.facebook[lang]},
         {e: socialLinksInstagram, v: tr.social_links.instagram[lang]},
@@ -153,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Create date time element
                 const dateTime = document.createElement('p');
-                dateTime.textContent = new Date(event.dateTime).toLocaleString();
+                dateTime.textContent = new Date(event.dateTime).toLocaleString([], { dateStyle: 'short', timeStyle: 'short' });
                 dateTime.className = 'event-datetime';
                 eventDiv.appendChild(dateTime);
 
