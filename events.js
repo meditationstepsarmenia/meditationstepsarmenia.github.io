@@ -43,7 +43,7 @@ const event_descriptions = {
 const events = [
     {
         image: img_2,
-        link: fb_event_link,
+        // link: fb_event_link,
         dateTime: `2026-07-26${default_time}`,
         description: event_descriptions.d4,
         location: location_msa,
