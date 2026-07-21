@@ -21,6 +21,9 @@ const socialLinksTelegrameGroup = document.querySelector('.telegram-group .socia
     || Array.from(document.querySelector('.telegram-group').childNodes).find(node => node.nodeType === Node.TEXT_NODE);
 const socialLinksYoutubeArmenian = document.querySelector('.youtube-armenian .social-card__label');
 const socialLinksYoutubeYogaScience = document.querySelector('.youtube-yoga-science .social-card__label');
+const teachers = document.querySelector('.teachers');
+const teacherDadaYukteshvara = document.querySelector('.teacher_dada_yukteshvara');
+const teacherDidiAnandaSanjana = document.querySelector('.teacher_didi_ananda_sanjana');
 const instructors = document.querySelector('.instructors');
 const instructorNarek = document.querySelector('.instructor_narek');
 const instructorVardan = document.querySelector('.instructor_vardan');
@@ -58,6 +61,9 @@ const updateContent = (lang) => {
         {e: socialLinksTelegrameGroup, v: tr.social_links.telegram_group[lang]},
         {e: socialLinksYoutubeArmenian, v: tr.social_links.youtube_armenian[lang]},
         {e: socialLinksYoutubeYogaScience, v: tr.social_links.youtube_yoga_science[lang]},
+        {e: teachers, v: tr.teachers[lang]},
+        {e: teacherDadaYukteshvara, v: tr.teacher_dada_yukteshvara[lang]},
+        {e: teacherDidiAnandaSanjana, v: tr.teacher_didi_ananda_sanjana[lang]},
         {e: instructors, v: tr.instructors[lang]},
         {e: instructorNarek, v: tr.instructor_narek[lang]},
         {e: instructorVardan, v: tr.instructor_vardan[lang]},

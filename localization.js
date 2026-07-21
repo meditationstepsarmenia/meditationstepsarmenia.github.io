@@ -82,6 +82,21 @@ We warmly invite you to join us on this path of self-discovery and spiritual gro
             am: "Yoga Science (Անգլ/Ռուս)",
         },
     },
+    teachers: {
+        en: "Teachers",
+        ru: "Учителя",
+        am: "Ուսուցիչներ",
+    },
+    teacher_dada_yukteshvara: {
+        en: "Dada Yukteshvara",
+        ru: "Дада Юктешвара",
+        am: "Դադա Յուկտեշվարա",
+    },
+    teacher_didi_ananda_sanjana: {
+        en: "Didi Ananda Sanjana",
+        ru: "Диди Ананда Санджана",
+        am: "Դիդի Անանդա Սանջանա",
+    },
     instructors:  {
         en: "Instructors",
         ru: "Инструкторы",
