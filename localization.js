@@ -10,9 +10,9 @@ export const tr = {
         am: "Համայնք, որ քայլում է ինքնաճանաչման ճանապարհով՝ միասին։",
     },
     events_header: {
-        en: "Upcoming еvents",
-        ru: "Ближайшие мероприятия",
-        am: "Գալիք իրադարձություններ"
+        en: "Upcoming Events",
+        ru: "Ближайшие Мероприятия",
+        am: "Գալիք Հանդիպումները"
     },
     event_remaining: {
         today: {
@@ -77,7 +77,7 @@ We warmly invite you to join us on this path of self-discovery and spiritual gro
         video_header:  {
             en: "Video Channels",
             ru: "Видео Про Йогу",
-            am: "Հոլովակների շտեմարան",
+            am: "Հոլովակների Շտեմարան",
         },
         telegram_channel:  {
             en: "Telegram Channel ",
