@@ -33,6 +33,27 @@ const footer = document.querySelector('footer');
 
 let currentLanguage = 'am';
 
+const dayWord = (n, lang) => {
+    if (lang === 'ru') {
+        const mod10 = n % 10, mod100 = n % 100;
+        if (mod10 === 1 && mod100 !== 11) return tr.event_remaining.day.ru;
+        if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return tr.event_remaining.days_few.ru;
+        return tr.event_remaining.days.ru;
+    }
+    return n === 1 ? tr.event_remaining.day[lang] : tr.event_remaining.days[lang];
+};
+
+const formatEventDateTime = (dateTimeStr, lang) => {
+    const date = new Date(dateTimeStr);
+    const startOfDay = d => new Date(d.getFullYear(), d.getMonth(), d.getDate());
+    const daysLeft = Math.round((startOfDay(date) - startOfDay(new Date())) / 86400000);
+    const remaining = daysLeft <= 0
+        ? tr.event_remaining.today[lang]
+        : `${daysLeft} ${dayWord(daysLeft, lang)}`;
+    const formattedDate = date.toLocaleString([], { year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+    return `${formattedDate} (${remaining})`;
+};
+
 // Update content based on language
 const updateContent = (lang) => {
     const eventsHeader = document.querySelector('.events-header');
@@ -46,6 +67,13 @@ const updateContent = (lang) => {
             resultArray.push({
                 e: desc_element,
                 v: matchingDescriptions[lang]
+            });
+    }
+    for (const dateTimeElement of document.querySelectorAll('.event-datetime')) {
+        if (dateTimeElement.dataset.dateTime)
+            resultArray.push({
+                e: dateTimeElement,
+                v: formatEventDateTime(dateTimeElement.dataset.dateTime, lang)
             });
     }
     
@@ -155,7 +183,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Create date time element
                 const dateTime = document.createElement('p');
-                dateTime.textContent = new Date(event.dateTime).toLocaleString([], { dateStyle: 'short', timeStyle: 'short' });
+                dateTime.textContent = formatEventDateTime(event.dateTime, currentLanguage);
+                dateTime.dataset.dateTime = event.dateTime;
                 dateTime.className = 'event-datetime';
                 eventDiv.appendChild(dateTime);
 

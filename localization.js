@@ -14,6 +14,29 @@ export const tr = {
         ru: "Ближайшие мероприятия",
         am: "Գալիք իրադարձություններ"
     },
+    event_remaining: {
+        today: {
+            en: "Today",
+            ru: "Сегодня",
+            am: "Այսօր",
+        },
+        day: {
+            en: "day",
+            ru: "день",
+            am: "օր",
+        },
+        // Russian needs a separate form for 2-4 (дня); en/am reuse their plural
+        days_few: {
+            en: "days",
+            ru: "дня",
+            am: "օր",
+        },
+        days: {
+            en: "days",
+            ru: "дней",
+            am: "օր",
+        },
+    },
     who_we_are_header: {
         en: "About us",
         ru: "О нас",
