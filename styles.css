@@ -924,6 +924,12 @@ footer {
   letter-spacing: 0.04em;
 }
 
+.footer-copyright {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
 .footer__ornament {
   display: flex;
   align-items: center;

@@ -163,5 +163,11 @@ The class includes:
         en: "Kindly, Meditation Steps Armenia team.",
         ru: "С любовью, команда Уроки Медитации Армения.",
         am: "Սիրով, Մեդիտացիայի Դասեր Հայաստանում թիմ:",
+    },
+    // © and the current year are appended dynamically in script.js
+    footer_copyright: {
+        en: "All rights reserved",
+        ru: "Все права защищены",
+        am: "Բոլոր իրավունքները պաշտպանված են",
     }
 };

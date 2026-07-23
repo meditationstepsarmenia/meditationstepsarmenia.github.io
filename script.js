@@ -29,7 +29,8 @@ const instructors = document.querySelector('.instructors');
 const instructorNarek = document.querySelector('.instructor_narek');
 const instructorVardan = document.querySelector('.instructor_vardan');
 const instructorDavit = document.querySelector('.instructor_davit');
-const footer = document.querySelector('footer');
+const footerNote = document.querySelector('.footer-note') || document.querySelector('footer p');
+const footerCopyright = document.querySelector('.footer-copyright');
 
 let currentLanguage = 'am';
 
@@ -100,7 +101,8 @@ const updateContent = (lang) => {
         {e: instructorNarek, v: tr.instructor_narek[lang]},
         {e: instructorVardan, v: tr.instructor_vardan[lang]},
         {e: instructorDavit, v: tr.instructor_davit[lang]},
-        {e: footer, v: tr.footer[lang]},
+        {e: footerNote, v: tr.footer[lang]},
+        {e: footerCopyright, v: `${tr.footer_copyright[lang]} © ${currentDate.getFullYear()}`},
     ]
     if (upcomingEvents.length > 0)
         elementsAndValues.push({e: eventsHeader, v: tr.events_header[lang], logsOff: true})
