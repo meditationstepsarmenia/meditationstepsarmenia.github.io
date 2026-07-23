@@ -49,7 +49,9 @@ const formatEventDateTime = (dateTimeStr, lang) => {
     const daysLeft = Math.round((startOfDay(date) - startOfDay(new Date())) / 86400000);
     const remaining = daysLeft <= 0
         ? tr.event_remaining.today[lang]
-        : `${daysLeft} ${dayWord(daysLeft, lang)}`;
+        : lang === 'ru' && daysLeft === 1
+            ? `${tr.event_remaining.in_prefix.ru}${tr.event_remaining.day.ru}` // "через день" — no numeral
+            : `${tr.event_remaining.in_prefix[lang]}${daysLeft} ${dayWord(daysLeft, lang)}`;
     const formattedDate = date.toLocaleString([], { year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: '2-digit' });
     return `${formattedDate} (${remaining})`;
 };

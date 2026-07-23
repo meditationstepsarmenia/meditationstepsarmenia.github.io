@@ -20,21 +20,28 @@ export const tr = {
             ru: "Сегодня",
             am: "Այսօր",
         },
+        // "in N days" prefix; Armenian has no prefix word — "in" is expressed
+        // by the ablative day-word "օրից" instead
+        in_prefix: {
+            en: "in ",
+            ru: "через ",
+            am: "",
+        },
         day: {
             en: "day",
             ru: "день",
-            am: "օր",
+            am: "օրից",
         },
         // Russian needs a separate form for 2-4 (дня); en/am reuse their plural
         days_few: {
             en: "days",
             ru: "дня",
-            am: "օր",
+            am: "օրից",
         },
         days: {
             en: "days",
             ru: "дней",
-            am: "օր",
+            am: "օրից",
         },
     },
     who_we_are_header: {
