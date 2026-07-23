@@ -2,52 +2,97 @@ export const tr = {
     main_header: {
         en: "Meditation Steps Armenia",
         ru: "Уроки Медитации Армения",
-        am: "Մեդիտացիայի Դասեր Հայաստանում"
+        am: "Մեդիտացիայի Դասեր Հայաստանում",
+        ka: "მედიტაციის გაკვეთილები სომხეთში",
+        hi: "मेडिटेशन स्टेप्स आर्मेनिया",
+        es: "Meditation Steps Armenia",
+        de: "Meditation Steps Armenia",
+        fr: "Meditation Steps Armenia",
     },
     hero_tagline: {
         en: "A community walking the path of self-discovery — together.",
         ru: "Сообщество, шагающее по пути самопознания — вместе.",
         am: "Համայնք, որ քայլում է ինքնաճանաչման ճանապարհով՝ միասին։",
+        ka: "საზოგადოება, რომელიც თვითშემეცნების გზას ერთად მიუყვება.",
+        hi: "एक समुदाय जो आत्म-खोज के पथ पर चल रहा है — एक साथ।",
+        es: "Una comunidad que recorre el camino del autoconocimiento — juntos.",
+        de: "Eine Gemeinschaft, die den Weg der Selbsterkenntnis geht — gemeinsam.",
+        fr: "Une communauté qui parcourt le chemin de la découverte de soi — ensemble.",
     },
     events_header: {
         en: "Upcoming Events",
         ru: "Ближайшие Мероприятия",
-        am: "Գալիք Հանդիպումները"
+        am: "Գալիք Հանդիպումները",
+        ka: "მომავალი ღონისძიებები",
+        hi: "आगामी कार्यक्रम",
+        es: "Próximos Eventos",
+        de: "Kommende Veranstaltungen",
+        fr: "Événements à Venir",
     },
     event_remaining: {
         today: {
             en: "Today",
             ru: "Сегодня",
             am: "Այսօր",
+            ka: "დღეს",
+            hi: "आज",
+            es: "Hoy",
+            de: "Heute",
+            fr: "Aujourd'hui",
         },
-        // "in N days" prefix; Armenian has no prefix word — "in" is expressed
-        // by the ablative day-word "օրից" instead
+        // "in N days" prefix; Armenian, Georgian and Hindi have no prefix word —
+        // "in" is expressed by the day-word itself ("օրից" / "დღეში" / "दिन में")
         in_prefix: {
             en: "in ",
             ru: "через ",
             am: "",
+            ka: "",
+            hi: "",
+            es: "en ",
+            de: "in ",
+            fr: "dans ",
         },
         day: {
             en: "day",
             ru: "день",
             am: "օրից",
+            ka: "დღეში",
+            hi: "दिन में",
+            es: "día",
+            de: "Tag",
+            fr: "jour",
         },
-        // Russian needs a separate form for 2-4 (дня); en/am reuse their plural
+        // Russian needs a separate form for 2-4 (дня); other languages reuse their plural
         days_few: {
             en: "days",
             ru: "дня",
             am: "օրից",
+            ka: "დღეში",
+            hi: "दिनों में",
+            es: "días",
+            de: "Tagen",
+            fr: "jours",
         },
         days: {
             en: "days",
             ru: "дней",
             am: "օրից",
+            ka: "დღეში",
+            hi: "दिनों में",
+            es: "días",
+            de: "Tagen",
+            fr: "jours",
         },
     },
     who_we_are_header: {
         en: "About Meetups & Us",
         ru: "Про Встречи и Нас",
         am: "Հանդիպումների և Մեր Մասին",
+        ka: "შეხვედრებისა და ჩვენ შესახებ",
+        hi: "मुलाक़ातों और हमारे बारे में",
+        es: "Sobre los Encuentros y Nosotros",
+        de: "Über die Treffen und Uns",
+        fr: "À Propos des Rencontres et de Nous",
     },
     who_we_are_desc: {
         en: `Do you experience a lack of focus, stress, addiction to social media or food, low energy, or a thirst for happiness? If so, you are in the right place. Yoga helps solve these problems. The offered exercises and meditations, by influencing our mind and glandular system, calm the mind, enhance concentration, and regulate hormone production. A lasting sense of fulfillment also arises. Our specialists, using a personalized approach, will help address your specific issues. We gladly welcome everyone. Join us this coming Sunday.
@@ -71,103 +116,233 @@ The class includes:
 ✅ Ասանաներ (վարժություններ)
 ✅ Յոգական պարեր, երգեր
 ✅ Դասախոսություն և հետաքրքիր զրույցներ թեյի շուրջ:`,
+        ka: `გაქვთ კონცენტრაციის ნაკლებობა, სტრესი, სოციალურ ქსელებზე ან საკვებზე დამოკიდებულება, ენერგიის ნაკლებობა ან ბედნიერების წყურვილი? მაშინ სწორ ადგილას ხართ. იოგა ამ პრობლემების მოგვარებაში გვეხმარება. შემოთავაზებული ვარჯიშები და მედიტაციები, ჩვენს გონებასა და ჯირკვლოვან სისტემაზე ზემოქმედებით, ამშვიდებს გონებას, აძლიერებს კონცენტრაციას და არეგულირებს ჰორმონების გამომუშავებას. ჩნდება ხანგრძლივი კმაყოფილების განცდაც. ჩვენი სპეციალისტები ინდივიდუალური მიდგომით დაგეხმარებიან სწორედ თქვენი პრობლემების მოგვარებაში. სიხარულით ველოდებით ყველას. შემოგვიერთდით მომავალ კვირას.
+
+გაკვეთილი მოიცავს:
+✅ მანტრა-მედიტაციებს
+✅ ასანებს (ვარჯიშებს)
+✅ იოგურ ცეკვებს, სიმღერებს
+✅ ლექციასა და საინტერესო საუბრებს ჩაისთან ერთად`,
+        hi: `क्या आप एकाग्रता की कमी, तनाव, सोशल मीडिया या भोजन की लत, ऊर्जा की कमी या खुशी की प्यास महसूस करते हैं? तो आप सही जगह पर हैं। योग इन समस्याओं को हल करने में मदद करता है। प्रस्तावित व्यायाम और ध्यान, हमारे मन और ग्रंथि तंत्र पर प्रभाव डालकर, मन को शांत करते हैं, एकाग्रता बढ़ाते हैं और हार्मोन उत्पादन को नियंत्रित करते हैं। संतुष्टि की एक स्थायी भावना भी उत्पन्न होती है। हमारे विशेषज्ञ व्यक्तिगत दृष्टिकोण से आपकी विशेष समस्याओं को हल करने में मदद करेंगे। हम सभी का हार्दिक स्वागत करते हैं। इस आने वाले रविवार को हमसे जुड़ें।
+
+कक्षा में शामिल हैं:
+✅ मंत्र ध्यान
+✅ आसन (व्यायाम)
+✅ योग नृत्य, गीत
+✅ व्याख्यान और चाय पर रोचक बातचीत`,
+        es: `¿Experimentas falta de concentración, estrés, adicción a las redes sociales o a la comida, poca energía o sed de felicidad? Si es así, estás en el lugar correcto. El yoga ayuda a resolver estos problemas. Los ejercicios y meditaciones ofrecidos, al influir en nuestra mente y en el sistema glandular, calman la mente, mejoran la concentración y regulan la producción de hormonas. También surge una sensación duradera de plenitud. Nuestros especialistas, con un enfoque personalizado, te ayudarán a abordar tus problemas específicos. Damos la bienvenida a todos con mucho gusto. Únete a nosotros este próximo domingo.
+
+La clase incluye:
+✅ Meditaciones con mantras
+✅ Asanas (ejercicios)
+✅ Danzas y cantos yóguicos
+✅ Una charla e interesantes conversaciones tomando té`,
+        de: `Erlebst du Konzentrationsmangel, Stress, Abhängigkeit von sozialen Medien oder Essen, Energiemangel oder einen Durst nach Glück? Dann bist du hier genau richtig. Yoga hilft, diese Probleme zu lösen. Die angebotenen Übungen und Meditationen wirken auf unseren Geist und das Drüsensystem, beruhigen den Geist, stärken die Konzentration und regulieren die Hormonproduktion. Es entsteht auch ein anhaltendes Gefühl der Erfüllung. Unsere Spezialisten helfen dir mit einem individuellen Ansatz, genau deine Anliegen anzugehen. Wir heißen alle herzlich willkommen. Sei am kommenden Sonntag dabei.
+
+Die Stunde umfasst:
+✅ Mantra-Meditationen
+✅ Asanas (Übungen)
+✅ Yogische Tänze und Lieder
+✅ Einen Vortrag und interessante Gespräche bei Tee`,
+        fr: `Ressentez-vous un manque de concentration, du stress, une dépendance aux réseaux sociaux ou à la nourriture, un manque d'énergie ou une soif de bonheur ? Alors vous êtes au bon endroit. Le yoga aide à résoudre ces problèmes. Les exercices et méditations proposés, en agissant sur notre esprit et notre système glandulaire, apaisent le mental, renforcent la concentration et régulent la production d'hormones. Un sentiment durable de plénitude apparaît également. Nos spécialistes, grâce à une approche personnalisée, vous aideront à traiter vos problèmes spécifiques. Nous accueillons tout le monde avec joie. Rejoignez-nous dimanche prochain.
+
+Le cours comprend :
+✅ Méditations avec mantras
+✅ Asanas (exercices)
+✅ Danses et chants yogiques
+✅ Une conférence et des conversations intéressantes autour d'un thé`,
     },
     social_links: {
         header:  {
             en: "Contact Us",
             ru: "Наши контакты",
             am: "Կոնտակտային հարթակներ",
+            ka: "დაგვიკავშირდით",
+            hi: "संपर्क करें",
+            es: "Contáctanos",
+            de: "Kontakt",
+            fr: "Nous Contacter",
         },
         video_header:  {
             en: "Video Channels",
             ru: "Видео Про Йогу",
             am: "Հոլովակների Շտեմարան",
+            ka: "ვიდეო არხები",
+            hi: "वीडियो चैनल",
+            es: "Canales de Video",
+            de: "Videokanäle",
+            fr: "Chaînes Vidéo",
         },
         telegram_channel:  {
             en: "Telegram Channel ",
             ru: "Телеграм Канал ",
             am: "Տելեգրամ Ալիք ",
+            ka: "ტელეგრამის არხი ",
+            hi: "टेलीग्राम चैनल ",
+            es: "Canal de Telegram ",
+            de: "Telegram-Kanal ",
+            fr: "Chaîne Telegram ",
         },
         facebook:  {
             en: "Facebook ",
             ru: "Фейсбук ",
             am: "Ֆեյսբուք ",
+            ka: "ფეისბუქი ",
+            hi: "फ़ेसबुक ",
+            es: "Facebook ",
+            de: "Facebook ",
+            fr: "Facebook ",
         },
         instagram:  {
             en: "Instagram page ",
             ru: "Инстаграм ",
             am: "Ինստագրամ ",
+            ka: "ინსტაგრამი ",
+            hi: "इंस्टाग्राम पेज ",
+            es: "Página de Instagram ",
+            de: "Instagram-Seite ",
+            fr: "Page Instagram ",
         },
         telegram_group:  {
             en: "Telegram Group ",
             ru: "Телеграм Группа",
             am: "Տելեգրամի Խումբ",
+            ka: "ტელეგრამის ჯგუფი",
+            hi: "टेलीग्राम समूह",
+            es: "Grupo de Telegram",
+            de: "Telegram-Gruppe",
+            fr: "Groupe Telegram",
         },
         youtube_armenian: {
             en: "Yoga & Meditation (Armenian)",
             ru: "Йога и Медитация (Армянский)",
             am: "Յոգա և Մեդիտացիա (Հայերեն)",
+            ka: "იოგა და მედიტაცია (სომხურად)",
+            hi: "योग और ध्यान (अर्मेनियाई)",
+            es: "Yoga y Meditación (Armenio)",
+            de: "Yoga & Meditation (Armenisch)",
+            fr: "Yoga et Méditation (Arménien)",
         },
         youtube_yoga_science: {
             en: "Yoga Science (Eng/Rus)",
             ru: "Йога Наука (Англ/Рус)",
             am: "Յոգական Գիտություն (Անգլ/Ռուս)",
+            ka: "იოგას მეცნიერება (ინგ/რუს)",
+            hi: "योग विज्ञान (अंग्रेज़ी/रूसी)",
+            es: "Ciencia del Yoga (Ing/Rus)",
+            de: "Yoga-Wissenschaft (Eng/Rus)",
+            fr: "Science du Yoga (Ang/Rus)",
         },
     },
     teachers: {
         en: "Teachers",
         ru: "Учителя",
         am: "Ուսուցիչներ",
+        ka: "მასწავლებლები",
+        hi: "शिक्षक",
+        es: "Maestros",
+        de: "Lehrer",
+        fr: "Enseignants",
     },
     teacher_dada_yukteshvara: {
         en: "Dada Yukteshvara",
         ru: "Дада Юктешвара",
         am: "Դադա Յուկտեշվարա",
+        ka: "დადა იუკტეშვარა",
+        hi: "दादा युक्तेश्वर",
+        es: "Dada Yukteshvara",
+        de: "Dada Yukteshvara",
+        fr: "Dada Yukteshvara",
     },
     teacher_didi_ananda_sanjana: {
         en: "Didi Ananda Sanjana",
         ru: "Диди Ананда Санджана",
         am: "Դիդի Անանդա Սանջանա",
+        ka: "დიდი ანანდა სანჯანა",
+        hi: "दीदी आनंद संजना",
+        es: "Didi Ananda Sanjana",
+        de: "Didi Ananda Sanjana",
+        fr: "Didi Ananda Sanjana",
     },
     instructors:  {
         en: "Instructors",
         ru: "Инструкторы",
         am: "Հրահանգիչներ",
+        ka: "ინსტრუქტორები",
+        hi: "प्रशिक्षक",
+        es: "Instructores",
+        de: "Kursleiter",
+        fr: "Instructeurs",
     },
     instructor_narek: {
         en: "Narek",
         ru: "Нарек",
         am: "Նարեկ",
+        ka: "ნარეკი",
+        hi: "नारेक",
+        es: "Narek",
+        de: "Narek",
+        fr: "Narek",
     },
     instructor_vardan: {
         en: "Vardan",
         ru: "Вардан",
         am: "Վարդան",
+        ka: "ვარდანი",
+        hi: "वरदान",
+        es: "Vardan",
+        de: "Vardan",
+        fr: "Vardan",
     },
     instructor_davit: {
         en: "Davit",
         ru: "Давид",
         am: "Դավիթ",
+        ka: "დავითი",
+        hi: "दावित",
+        es: "Davit",
+        de: "Davit",
+        fr: "Davit",
     },
     instructor_khachik: {
         en: "Khachik",
         ru: "Хачик",
         am: "Խաչիկ",
+        ka: "ხაჩიკი",
+        hi: "खाचिक",
+        es: "Khachik",
+        de: "Khachik",
+        fr: "Khachik",
     },
     instructor_madhuvanii: {
         en: "Madhuvanii",
         ru: "Мадувани",
         am: "Մադուվանի",
+        ka: "მადუვანი",
+        hi: "मधुवनी",
+        es: "Madhuvanii",
+        de: "Madhuvanii",
+        fr: "Madhuvanii",
     },
     footer: {
         en: "Kindly, Meditation Steps Armenia team.",
         ru: "С любовью, команда Уроки Медитации Армения.",
         am: "Սիրով, Մեդիտացիայի Դասեր Հայաստանում թիմ:",
+        ka: "სიყვარულით, Meditation Steps Armenia-ის გუნდი.",
+        hi: "सप्रेम, मेडिटेशन स्टेप्स आर्मेनिया टीम।",
+        es: "Con cariño, el equipo de Meditation Steps Armenia.",
+        de: "Herzlichst, das Team von Meditation Steps Armenia.",
+        fr: "Avec amour, l'équipe de Meditation Steps Armenia.",
     },
     // © and the current year are appended dynamically in script.js
     footer_copyright: {
         en: "All rights reserved",
         ru: "Все права защищены",
         am: "Բոլոր իրավունքները պաշտպանված են",
+        ka: "ყველა უფლება დაცულია",
+        hi: "सर्वाधिकार सुरक्षित",
+        es: "Todos los derechos reservados",
+        de: "Alle Rechte vorbehalten",
+        fr: "Tous droits réservés",
     }
 };
