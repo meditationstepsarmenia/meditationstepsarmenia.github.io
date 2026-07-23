@@ -38,35 +38,32 @@ export const tr = {
         },
     },
     who_we_are_header: {
-        en: "About us",
-        ru: "О нас",
-        am: "Մեր մասին",
+        en: "About Meetups & Us",
+        ru: "Про Встречи и Нас",
+        am: "Հանդիպումների և Մեր Մասին",
     },
     who_we_are_desc: {
-        en: `Hello, dear friend! 🙏
-We are a community that lovingly shares the knowledge and practice of Rajadhiraja Yoga, aiming to foster the harmonious development of individuals on physical, mental, and spiritual levels. 🌸
-📅 Every Sunday, we organize open classes where participation is based on donation, making it accessible to everyone. Our gatherings include:
-✅ Dynamic and static mantra meditations
-✅ Asanas (yogic exercises)
-✅ Yogic dances and songs
-✅ Lectures and spiritual discussions over tea.
-We warmly invite you to join us on this path of self-discovery and spiritual growth. Let's create a conscious future together. You can find the schedule of our events on the social media platforms mentioned above. ⬆️`,
-        ru: `Здравствуйте, дорогой друг! 🙏
-Мы — сообщество, с любовью разделяющее знание и практику Раджадхираджа йоги, целью которого является содействие гармоничному развитию человека на физическом, ментальном и духовном уровнях. 🌸
-📅 Каждое воскресенье мы организуем открытые занятия, участие в которых основано на принципе пожертвования, что делает их доступными для всех. Наши встречи включают:
-✅ Динамические и статические мантра-медитации
-✅ Асаны (йогические упражнения)
-✅ Йогические танцы и песни
-✅ Лекции и духовные беседы за чашкой чая.
-С любовью приглашаем Вас присоединиться к этому пути самопознания и духовного роста. Давайте вместе создавать осознанное будущее. С расписанием наших мероприятий вы можете ознакомиться на указанных выше социальных платформах. ⬆️`,
-        am: `Ողջույն, սիրելի՛ բարեկամ։ 🙏
-Մենք Ռաջադհիռաջա յոգայի գիտելիքն ու պրակտիկան սիրով կիսող համայնք ենք, որի նպատակն է նպաստել մարդու ներդաշնակ զարգացմանը՝ ֆիզիկական, մտավոր և հոգևոր մակարդակներում։ 🌸
-📅 Ամեն կիրակի մենք կազմակերպում ենք բաց դասեր, որոնց մասնակցությունը նվիրատվության սկզբունքով է՝ դարձնելով այն հասանելի բոլորի համար։ Մեր հանդիպումները ներառում են՝
-✅ Դինամիկ և ստատիկ մանտրա-մեդիտացիաներ
-✅ Ասանաներ (յոգական վարժություններ)
-✅ Յոգական պարեր և երգեր
-✅ Դասախոսություններ և հոգևոր զրույցներ թեյի շուրջ:
-Սիրով հրավիրում ենք Ձեզ միանալու ինքնաճանաչման և հոգևոր աճի այս ճանապարհին։ Եկե՛ք միասին կերտենք գիտակից ապագա։ Մեր միջոցառումների ժամանակացույցին կարող եք ծանոթանալ վերը նշված սոցիալական հարթակներում։ ⬆️`,
+        en: `Do you experience a lack of focus, stress, addiction to social media or food, low energy, or a thirst for happiness? If so, you are in the right place. Yoga helps solve these problems. The offered exercises and meditations, by influencing our mind and glandular system, calm the mind, enhance concentration, and regulate hormone production. A lasting sense of fulfillment also arises. Our specialists, using a personalized approach, will help address your specific issues. We gladly welcome everyone. Join us this coming Sunday.
+
+The class includes:
+✅ Mantra meditations
+✅ Asanas (exercises)
+✅ Yogic dances, songs
+✅ A lecture and interesting conversations over tea`,
+        ru: `Испытываете проблемы с концентрацией, стресс, зависимость от социальных сетей или еды, нехватку энергии или жажду счастья? Значит, вы в правильном месте. Йога помогает решить эти проблемы. Предлагаемые упражнения и медитации, воздействуя на наш разум и эндокринную (железистую) систему, успокаивают ум, улучшают концентрацию и регулируют выработку гормонов. Также появляется стойкое чувство удовлетворения. Наши специалисты благодаря индивидуальному подходу помогут решить именно ваши проблемы. Мы с радостью ждем всех. Присоединяйтесь в предстоящее воскресенье.
+
+Занятие включает в себя:
+✅ Мантра-медитации
+✅ Асаны (упражнения)
+✅ Йогические танцы, песни
+✅ Лекцию и интересные беседы за чаем`,
+        am: `Ունե՞ս ապակենտրոնացում, սթրես, կախվածություն սոց․ ցանցերից կամ սննդից, եռանդի պակաս կամ երջանկության ծարավ․ ուրեմն ճիշտ տեղում ես։ Յոգան օգնում է լուծել այս խնդիրները։ Առաջարկվող վարժություններն ու մեդիտացիաները, ներգործելով մեր մտքի և գեղձային համակարգի վրա, հանգստացնում են միտքը, ուժեղացնում կենտրոնացումը և կարգավորում հորմոնարտադրությունը։ Ի հայտ է գալիս նաև մնայուն բավարարվածության զգացում։ Մեր մասնագետներն անհատական մոտեցմամբ կօգնեն հասցեագրել հենց Ձեր խնդիրները։ Մենք սիրով սպասում ենք բոլորին։ Միացե՛ք գալիք կիրակի։
+
+Դասը ներառում է՝
+✅ Մանտրա-մեդիտացիաներ
+✅ Ասանաներ (վարժություններ)
+✅ Յոգական պարեր, երգեր
+✅ Դասախոսություն և հետաքրքիր զրույցներ թեյի շուրջ:`,
     },
     social_links: {
         header:  {

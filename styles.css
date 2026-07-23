@@ -667,7 +667,7 @@ h2::after {
   line-height: 1.85;
   color: var(--c-text-muted);
   white-space: pre-line;
-  text-align: left;
+  text-align: justify;
 }
 
 /* ============ Instructors ============ */
