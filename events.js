@@ -40,12 +40,41 @@ const event_descriptions = {
     }
 }
 
-const events = [
-    {
-        image: img_2,
-        // link: fb_event_link,
-        dateTime: `2026-07-26${default_time}`,
-        description: event_descriptions.d4,
-        location: location_msa,
-    },
+// Template for auto-generated Sunday events. dateTime is a placeholder —
+// each generated event overrides it with the upcoming Sunday's date,
+// keeping the time part from default_time.
+const force_events_sample = {
+    image: img_2,
+    // link: fb_event_link,
+    dateTime: `2026-07-26${default_time}`,
+    description: event_descriptions.d4,
+    location: location_msa,
+};
+
+// When set to a positive number N, the next N Sundays (including today if
+// it is a Sunday) are appended to `events` as copies of force_events_sample.
+// Set to 0 to display only the events listed in `events`.
+const upcoming_sundays = 1;
+
+const events = [ // additional Events
+    // {
+    //     image: img_2,
+    //     // link: fb_event_link,
+    //     dateTime: `2026-07-26${default_time}`,
+    //     description: event_descriptions.d4,
+    //     location: location_msa,
+    // },
 ];
+
+if (upcoming_sundays > 0) {
+    const existingDates = new Set(events.map(e => e.dateTime.split('T')[0]));
+    const sunday = new Date();
+    sunday.setDate(sunday.getDate() + (7 - sunday.getDay()) % 7); // today if Sunday
+    for (let i = 0; i < upcoming_sundays; i++) {
+        const isoDate = `${sunday.getFullYear()}-${String(sunday.getMonth() + 1).padStart(2, '0')}-${String(sunday.getDate()).padStart(2, '0')}`;
+        // skip Sundays already covered by a manually listed event
+        if (!existingDates.has(isoDate))
+            events.push({ ...force_events_sample, dateTime: `${isoDate}${default_time}` });
+        sunday.setDate(sunday.getDate() + 7);
+    }
+}
