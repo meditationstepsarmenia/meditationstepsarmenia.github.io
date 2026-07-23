@@ -32,7 +32,16 @@ const instructorDavit = document.querySelector('.instructor_davit');
 const footerNote = document.querySelector('.footer-note') || document.querySelector('footer p');
 const footerCopyright = document.querySelector('.footer-copyright');
 
-let currentLanguage = 'am';
+const supportedLanguages = Array.from(languageItems).map(item => item.getAttribute('data-lang'));
+const urlLang = new URLSearchParams(window.location.search).get('lang');
+let currentLanguage = supportedLanguages.includes(urlLang) ? urlLang : 'am';
+
+// Keep the ?lang= query parameter in sync with the selected language
+const syncLangInUrl = (lang) => {
+    const url = new URL(window.location);
+    url.searchParams.set('lang', lang);
+    history.replaceState(null, '', url);
+};
 
 const dayWord = (n, lang) => {
     if (lang === 'ru') {
@@ -119,8 +128,9 @@ const updateContent = (lang) => {
     }
 };
 
-// Initialize default language (English)
-document.querySelector('[data-lang="en"]').classList.add('selected');
+// Initialize language from the ?lang= URL parameter (default: Armenian)
+document.querySelector(`[data-lang="${currentLanguage}"]`).classList.add('selected');
+syncLangInUrl(currentLanguage);
 updateContent(currentLanguage);
 
 // Set up language switching
@@ -129,6 +139,7 @@ languageItems.forEach(item => {
         languageItems.forEach(i => i.classList.remove('selected')); // Clear selection
         item.classList.add('selected'); // Mark new selection
         currentLanguage = item.getAttribute('data-lang');
+        syncLangInUrl(currentLanguage);
         updateContent(currentLanguage);
     });
 });
