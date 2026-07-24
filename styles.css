@@ -1326,9 +1326,48 @@ h2::after {
 
 /* --- Flashcard (3D flip) --- */
 
-.quiz-card {
+.quiz-card-wrap {
+  position: relative;
   width: 100%;
   max-width: 640px;
+}
+
+/* Bookmark toggle floats over the card's corner (kept outside the card
+   button — nested interactive elements are invalid and steal clicks) */
+.quiz-bookmark {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(15, 10, 31, 0.45);
+  border: 1px solid var(--c-border);
+  color: var(--c-text-muted);
+  font-size: 0.95rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease, transform 0.3s var(--ease-spring);
+}
+
+.quiz-bookmark:hover,
+.quiz-bookmark:focus-visible {
+  color: var(--c-gold);
+  transform: scale(1.1);
+}
+
+.quiz-bookmark.is-active {
+  color: var(--c-gold);
+  border-color: var(--c-border-strong);
+  background: rgba(212, 165, 116, 0.18);
+}
+
+.quiz-card {
+  width: 100%;
   background: none;
   border: none;
   padding: 0;
@@ -1393,6 +1432,18 @@ h2::after {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--c-gold);
+}
+
+/* The question stays readable above the answer, de-emphasized */
+.quiz-card__recap {
+  font-family: var(--ff-serif);
+  font-style: italic;
+  font-size: 0.98rem;
+  line-height: 1.45;
+  color: var(--c-text-dim);
+  max-width: 46ch;
+  padding: 0 1rem 0.9rem;
+  border-bottom: 1px solid var(--c-border);
 }
 
 .quiz-card__text {
@@ -1480,6 +1531,129 @@ h2::after {
 .quiz-verdict__btn--no:focus-visible {
   background: rgba(232, 164, 164, 0.15);
   box-shadow: 0 0 24px -6px rgba(232, 164, 164, 0.5);
+}
+
+/* --- Question-answer rows (mistakes review, saved cards) --- */
+
+.quiz-count-badge {
+  min-width: 1.5rem;
+  padding: 0.05rem 0.5rem;
+  border-radius: var(--radius-pill);
+  background: rgba(212, 165, 116, 0.18);
+  border: 1px solid var(--c-border);
+  color: var(--c-gold);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.quiz-qa-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  width: 100%;
+  max-width: 640px;
+}
+
+.quiz-qa {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  text-align: left;
+}
+
+.quiz-qa__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.quiz-qa__q {
+  font-family: var(--ff-serif);
+  font-size: 1.08rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--c-text);
+}
+
+.quiz-qa__a {
+  margin-top: 0.4rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--c-gold);
+}
+
+.quiz-qa__topic {
+  display: block;
+  margin-top: 0.5rem;
+  font-family: var(--ff-serif);
+  font-style: italic;
+  font-size: 0.78rem;
+  color: var(--c-text-dim);
+}
+
+.quiz-qa__btn {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid var(--c-border);
+  color: var(--c-text-dim);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.quiz-qa__btn:hover,
+.quiz-qa__btn:focus-visible {
+  color: var(--c-gold);
+  border-color: var(--c-border-strong);
+}
+
+.quiz-qa__btn.is-active {
+  color: var(--c-gold);
+  background: rgba(212, 165, 116, 0.15);
+  border-color: var(--c-border-strong);
+}
+
+.quiz-qa__btn--remove:hover,
+.quiz-qa__btn--remove:focus-visible {
+  color: var(--c-rose);
+  border-color: rgba(232, 164, 164, 0.5);
+  background: rgba(232, 164, 164, 0.1);
+}
+
+/* --- Saved cards screen --- */
+
+.quiz-saved-title {
+  flex: 1;
+  text-align: center;
+  font-family: var(--ff-serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--c-text);
+}
+
+.quiz-empty-all.is-armed {
+  color: var(--c-rose);
+  border-color: rgba(232, 164, 164, 0.5);
+  background: rgba(232, 164, 164, 0.1);
+}
+
+.quiz-saved-empty {
+  font-family: var(--ff-serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--c-text-dim);
+  margin-top: 2rem;
 }
 
 /* --- Results screen --- */
@@ -1640,6 +1814,14 @@ footer {
   }
   .quiz-topic-label {
     display: none; /* keep the top row uncluttered on phones */
+  }
+  .quiz-screen--saved .quiz-game__top {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .quiz-saved-title {
+    flex-basis: 100%;
+    order: -1;
   }
   .image-container {
     flex-direction: column;

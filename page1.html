@@ -70,6 +70,11 @@
                 <p class="quiz-lang-note" id="quiz-lang-note" hidden data-tr="quiz.lang_note">Quiz cards are available in Armenian, English and Russian; other languages show the English cards.</p>
                 <h2 class="quiz-topics-header" data-tr="quiz.choose_topic">Choose a Topic</h2>
                 <div class="quiz-topics" id="quiz-topics"><!-- topic cards injected by js/quiz.js --></div>
+                <button class="quiz-btn quiz-btn--ghost" id="quiz-saved-open" type="button">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                    <span data-tr="quiz.saved_cards">Saved Cards</span>
+                    <span class="quiz-count-badge" id="quiz-saved-count">0</span>
+                </button>
             </div>
 
             <!-- Game: flashcards -->
@@ -83,30 +88,36 @@
                     <span class="quiz-counter" id="quiz-counter"></span>
                 </div>
                 <div class="quiz-beads" id="quiz-beads" aria-hidden="true"></div>
-                <button class="quiz-card" id="quiz-card" type="button">
-                    <span class="quiz-card__inner">
-                        <span class="quiz-card__face quiz-card__face--front">
-                            <span class="quiz-card__tag" data-tr="quiz.question_label">Question</span>
-                            <span class="quiz-card__text" id="quiz-question"></span>
-                            <span class="quiz-card__hint">
-                                <i class="fas fa-hand-pointer" aria-hidden="true"></i>
-                                <span data-tr="quiz.tap_to_reveal">Tap to reveal the answer</span>
+                <div class="quiz-card-wrap">
+                    <button class="quiz-card" id="quiz-card" type="button">
+                        <span class="quiz-card__inner">
+                            <span class="quiz-card__face quiz-card__face--front">
+                                <span class="quiz-card__tag" data-tr="quiz.question_label">Question</span>
+                                <span class="quiz-card__text" id="quiz-question"></span>
+                                <span class="quiz-card__hint">
+                                    <i class="fas fa-hand-pointer" aria-hidden="true"></i>
+                                    <span data-tr="quiz.tap_to_reveal">Tap to reveal the answer</span>
+                                </span>
+                            </span>
+                            <span class="quiz-card__face quiz-card__face--back">
+                                <span class="quiz-card__recap" id="quiz-question-recap"></span>
+                                <span class="quiz-card__tag" data-tr="quiz.answer_label">Answer</span>
+                                <span class="quiz-card__text" id="quiz-answer"></span>
+                                <span class="quiz-card__hint">
+                                    <i class="fas fa-check" aria-hidden="true"></i>
+                                    <span data-tr="quiz.tap_knew">Tap the card if you knew it</span>
+                                </span>
                             </span>
                         </span>
-                        <span class="quiz-card__face quiz-card__face--back">
-                            <span class="quiz-card__tag" data-tr="quiz.answer_label">Answer</span>
-                            <span class="quiz-card__text" id="quiz-answer"></span>
-                        </span>
-                    </span>
-                </button>
+                    </button>
+                    <button class="quiz-bookmark" id="quiz-bookmark" type="button" aria-pressed="false">
+                        <i class="far fa-bookmark" aria-hidden="true"></i>
+                    </button>
+                </div>
                 <div class="quiz-verdict" id="quiz-verdict" hidden>
                     <button class="quiz-verdict__btn quiz-verdict__btn--no" id="quiz-no" type="button">
                         <i class="fas fa-xmark" aria-hidden="true"></i>
                         <span data-tr="quiz.missed_it">Not yet</span>
-                    </button>
-                    <button class="quiz-verdict__btn quiz-verdict__btn--yes" id="quiz-yes" type="button">
-                        <i class="fas fa-check" aria-hidden="true"></i>
-                        <span data-tr="quiz.knew_it">I knew it</span>
                     </button>
                 </div>
             </div>
@@ -119,6 +130,12 @@
                 <h2 data-tr="quiz.results_title">Session Complete</h2>
                 <p class="quiz-results__score" id="quiz-score"></p>
                 <div class="quiz-beads" id="quiz-results-beads" aria-hidden="true"></div>
+                <button class="quiz-btn quiz-btn--ghost quiz-review-toggle" id="quiz-review" type="button" hidden>
+                    <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
+                    <span data-tr="quiz.review_mistakes">Review Mistakes</span>
+                    <span class="quiz-count-badge" id="quiz-review-count">0</span>
+                </button>
+                <ul class="quiz-qa-list" id="quiz-mistakes" hidden></ul>
                 <div class="quiz-results__actions">
                     <button class="quiz-btn quiz-btn--ghost" id="quiz-again" type="button">
                         <i class="fas fa-rotate-right" aria-hidden="true"></i>
@@ -129,6 +146,23 @@
                         <span data-tr="quiz.back_to_topics">Back to Topics</span>
                     </button>
                 </div>
+            </div>
+
+            <!-- Saved cards: bookmarked question-answers (persisted in localStorage) -->
+            <div class="quiz-screen quiz-screen--saved" id="quiz-saved" hidden>
+                <div class="quiz-game__top">
+                    <button class="quiz-exit" id="quiz-saved-back" type="button">
+                        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                        <span data-tr="quiz.back_to_topics">Back to Topics</span>
+                    </button>
+                    <span class="quiz-saved-title" data-tr="quiz.saved_cards">Saved Cards</span>
+                    <button class="quiz-exit quiz-empty-all" id="quiz-empty-all" type="button">
+                        <i class="fas fa-trash-can" aria-hidden="true"></i>
+                        <span id="quiz-empty-all-label">Empty All</span>
+                    </button>
+                </div>
+                <p class="quiz-saved-empty" id="quiz-saved-empty" data-tr="quiz.saved_empty" hidden>You haven't saved any cards yet.</p>
+                <ul class="quiz-qa-list" id="quiz-saved-list"></ul>
             </div>
         </section>
 
