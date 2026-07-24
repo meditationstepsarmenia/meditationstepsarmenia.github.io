@@ -32,8 +32,7 @@ const SUPPORTED = LANGUAGES.map(l => l.code);
 // Subpages listed in the "Explore Yoga" dropdown
 const EXPLORE_PAGES = [
     { href: 'page1.html', key: 'page.page1_title' },
-    // page2 hidden for now — restore when it has content
-    // { href: 'page2.html', key: 'page.page2_title' },
+    { href: 'page2.html', key: 'page.page2_title' },
 ];
 
 const urlLang = new URLSearchParams(window.location.search).get('lang');
