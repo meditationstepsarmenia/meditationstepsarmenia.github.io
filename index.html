@@ -54,35 +54,9 @@
         <div class="cosmos__orb cosmos__orb--three"></div>
     </div>
 
-    <!-- Language Selector -->
-    <header class="language-header">
-        <div class="language-selector">
-            <div class="language-item" data-lang="en" title="English">
-                <img src="https://flagcdn.com/24x18/gb.png" alt="English">
-            </div>
-            <div class="language-item" data-lang="ru" title="Русский">
-                <img src="https://flagcdn.com/24x18/ru.png" alt="Russian">
-            </div>
-            <div class="language-item" data-lang="am" title="Հայերեն">
-                <img src="https://flagcdn.com/24x18/am.png" alt="Armenian">
-            </div>
-            <div class="language-item" data-lang="ka" title="ქართული">
-                <img src="https://flagcdn.com/24x18/ge.png" alt="Georgian">
-            </div>
-            <div class="language-item" data-lang="hi" title="हिन्दी">
-                <img src="https://flagcdn.com/24x18/in.png" alt="Hindi">
-            </div>
-            <div class="language-item" data-lang="es" title="Español">
-                <img src="https://flagcdn.com/24x18/es.png" alt="Spanish">
-            </div>
-            <div class="language-item" data-lang="de" title="Deutsch">
-                <img src="https://flagcdn.com/24x18/de.png" alt="German">
-            </div>
-            <div class="language-item" data-lang="fr" title="Français">
-                <img src="https://flagcdn.com/24x18/fr.png" alt="French">
-            </div>
-        </div>
-    </header>
+    <!-- Shared navigation header (Home, Explore Yoga dropdown, language
+         selector) — injected here by js/nav.js -->
+    <div id="site-nav"></div>
 
     <main class="container">
         <!-- Hero -->
@@ -248,6 +222,7 @@
     </main>
 
     <script src="events.js"></script>
+    <script type="module" src="js/nav.js"></script>
     <script type="module" src="script.js"></script>
     <script>
         // Scroll-reveal animations

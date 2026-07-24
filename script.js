@@ -1,11 +1,11 @@
 import { tr } from './localization.js';
+import { getLang } from './js/nav.js';
 
 const currentDate = new Date();
 const upcomingEvents = events
     .filter(event => new Date(event.dateTime) > currentDate)
     .sort((a, b) => new Date(a.dateTime) - new Date(b.dateTime));
 // Select DOM elements
-const languageItems = document.querySelectorAll('.language-item');
 const mainHeader = document.querySelector('.main-header');
 const heroTagline = document.querySelector('.hero__tagline');
 const whoWeAreHeader = document.querySelector('.who-we-are-header');
@@ -32,16 +32,9 @@ const instructorDavit = document.querySelector('.instructor_davit');
 const footerNote = document.querySelector('.footer-note') || document.querySelector('footer p');
 const footerCopyright = document.querySelector('.footer-copyright');
 
-const supportedLanguages = Array.from(languageItems).map(item => item.getAttribute('data-lang'));
-const urlLang = new URLSearchParams(window.location.search).get('lang');
-let currentLanguage = supportedLanguages.includes(urlLang) ? urlLang : 'am';
-
-// Keep the ?lang= query parameter in sync with the selected language
-const syncLangInUrl = (lang) => {
-    const url = new URL(window.location);
-    url.searchParams.set('lang', lang);
-    history.replaceState(null, '', url);
-};
+// js/nav.js owns the language selector, the ?lang= URL parameter and the
+// selected-flag state; it exposes the current language via getLang().
+let currentLanguage = getLang();
 
 const dayWord = (n, lang) => {
     if (lang === 'ru') {
@@ -128,20 +121,12 @@ const updateContent = (lang) => {
     }
 };
 
-// Initialize language from the ?lang= URL parameter (default: Armenian)
-document.querySelector(`[data-lang="${currentLanguage}"]`).classList.add('selected');
-syncLangInUrl(currentLanguage);
 updateContent(currentLanguage);
 
-// Set up language switching
-languageItems.forEach(item => {
-    item.addEventListener('click', () => {
-        languageItems.forEach(i => i.classList.remove('selected')); // Clear selection
-        item.classList.add('selected'); // Mark new selection
-        currentLanguage = item.getAttribute('data-lang');
-        syncLangInUrl(currentLanguage);
-        updateContent(currentLanguage);
-    });
+// Re-render this page's content whenever js/nav.js switches the language
+document.addEventListener('ms:languagechange', (e) => {
+    currentLanguage = e.detail.lang;
+    updateContent(currentLanguage);
 });
 
 document.addEventListener('DOMContentLoaded', function() {

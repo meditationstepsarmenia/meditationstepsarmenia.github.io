@@ -234,6 +234,8 @@ body::before {
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
   .cosmos__mandala, .cosmos__orb { animation: none; }
+  .page-hero > * { animation: none; }
+  .nav-dropdown__menu { transition: none; }
 }
 
 /* ============ Typography ============ */
@@ -307,13 +309,149 @@ h2::after {
   margin: 1rem auto 0;
 }
 
-/* ============ Language Header ============ */
+/* ============ Site Header / Navigation ============ */
+/* Injected by js/nav.js into the #site-nav placeholder on every page */
 
-.language-header {
+.site-header {
   position: fixed;
-  top: 1.25rem;
-  right: 1.25rem;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 50;
+  background: rgba(15, 10, 31, 0.55);
+  border-bottom: 1px solid var(--c-border);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.site-nav {
+  max-width: 1100px;
+  margin-inline: auto;
+  padding: 0.55rem clamp(1rem, 3vw, 2rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+
+.site-nav__links {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.nav-home,
+.nav-dropdown__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.9rem;
+  font-family: var(--ff-sans);
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+  color: var(--c-text-muted);
+  text-decoration: none;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-home:hover,
+.nav-home:focus-visible,
+.nav-dropdown__toggle:hover,
+.nav-dropdown__toggle:focus-visible {
+  color: var(--c-gold-bright);
+  background: var(--c-surface-strong);
+  border-color: var(--c-border);
+}
+
+.nav-home__icon {
+  color: var(--c-gold);
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.nav-home[aria-current="page"] {
+  color: var(--c-gold);
+}
+
+.nav-dropdown {
+  position: relative;
+}
+
+/* The open menu must paint (and take clicks) above the language flags —
+   on narrow screens the header wraps to two rows and the menu overlaps them */
+.nav-dropdown.is-open {
+  z-index: 70;
+}
+
+.nav-dropdown__toggle .fa-chevron-down {
+  font-size: 0.6rem;
+  color: var(--c-gold);
+  transition: transform 0.3s var(--ease-out);
+}
+
+.nav-dropdown.is-open .fa-chevron-down {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown__menu {
+  position: absolute;
+  top: calc(100% + 0.6rem);
+  left: 0;
+  min-width: 220px;
+  padding: 0.45rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  background: rgba(20, 14, 40, 0.92);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.25s ease, transform 0.25s var(--ease-out), visibility 0.25s;
+  z-index: 70;
+}
+
+.nav-dropdown.is-open .nav-dropdown__menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-dropdown__item {
+  display: block;
+  padding: 0.55rem 0.9rem;
+  border-radius: var(--radius-sm);
+  color: var(--c-text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.nav-dropdown__item:hover,
+.nav-dropdown__item:focus-visible {
+  background: var(--c-surface-strong);
+  color: var(--c-gold-bright);
+}
+
+.nav-dropdown__item[aria-current="page"] {
+  color: var(--c-gold);
+}
+
+/* The language pill sits inside the bar now — soften its own chrome */
+.site-nav .language-selector {
+  box-shadow: none;
+  background: rgba(255, 245, 230, 0.03);
 }
 
 .language-selector {
@@ -522,7 +660,7 @@ h2::after {
   .hero {
     grid-template-columns: 1fr;
     text-align: center;
-    padding-top: 5rem;
+    padding-top: 7rem;
     min-height: auto;
   }
   .hero__copy { align-items: center; }
@@ -914,6 +1052,60 @@ h2::after {
   color: var(--c-gold);
 }
 
+/* ============ Subpages ============ */
+
+.page-hero {
+  min-height: 55vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.4rem;
+  padding-top: clamp(7rem, 16vh, 10rem);
+}
+
+.page-title {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 500;
+  line-height: 1.05;
+  background: linear-gradient(135deg, var(--c-gold-bright) 0%, var(--c-gold) 40%, var(--c-rose) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.page-placeholder {
+  font-family: var(--ff-serif);
+  font-style: italic;
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  line-height: 1.6;
+  color: var(--c-text-muted);
+  max-width: 46ch;
+}
+
+.page-hero__decor {
+  font-size: 1.6rem;
+  color: var(--c-gold);
+  opacity: 0.7;
+}
+
+/* Staggered entrance on page load (no IntersectionObserver needed here) */
+.page-hero > * {
+  animation: page-enter 0.9s var(--ease-out) backwards;
+}
+
+.page-hero > *:nth-child(2) { animation-delay: 0.1s; }
+.page-hero > *:nth-child(3) { animation-delay: 0.2s; }
+.page-hero > *:nth-child(4) { animation-delay: 0.3s; }
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+
 /* ============ Footer ============ */
 
 footer {
@@ -981,9 +1173,18 @@ footer {
 
 /* ============ Media ============ */
 @media (max-width: 640px) {
-  .language-header {
-    top: 0.75rem;
-    right: 0.75rem;
+  /* Header wraps into two rows (links / flags) — center both and give
+     the hero room underneath the taller bar */
+  .site-nav {
+    justify-content: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .hero {
+    padding-top: 10rem;
+  }
+  .page-hero {
+    padding-top: 11rem;
   }
   .image-container {
     flex-direction: column;
