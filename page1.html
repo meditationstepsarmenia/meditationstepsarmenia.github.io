@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#1a1430">
     <meta name="description" content="Meditation Steps Armenia — a community sharing the wisdom and practice of Rajadhiraja yoga and meditation.">
-    <title>Page 1 · Meditation Steps Armenia</title>
+    <title>Yoga Quiz · Meditation Steps Armenia</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,15 +58,77 @@
     <div id="site-nav"></div>
 
     <main class="container">
-        <section class="page-hero">
-            <span class="eyebrow">
-                <span class="eyebrow__dot"></span>
-                <span data-tr="nav.explore">Explore Yoga</span>
-            </span>
-            <h1 class="page-title" data-tr="page.page1_title">Page 1</h1>
-            <p class="page-placeholder" data-tr="page.coming_soon">This page is being prepared — content is coming soon.</p>
-            <div class="page-hero__decor" aria-hidden="true">
-                <i class="fas fa-spa"></i>
+        <section class="quiz">
+            <!-- Start: topic selection -->
+            <div class="quiz-screen quiz-screen--start" id="quiz-start">
+                <span class="eyebrow">
+                    <span class="eyebrow__dot"></span>
+                    <span data-tr="nav.explore">Explore Yoga</span>
+                </span>
+                <h1 class="page-title" data-tr="page.page1_title">Yoga Quiz</h1>
+                <p class="quiz-intro" data-tr="quiz.intro">Draw a card, take a moment to think, tap it to reveal the answer — then be honest: did you know it?</p>
+                <p class="quiz-lang-note" id="quiz-lang-note" hidden data-tr="quiz.lang_note">Quiz cards are available in Armenian, English and Russian; other languages show the English cards.</p>
+                <h2 class="quiz-topics-header" data-tr="quiz.choose_topic">Choose a Topic</h2>
+                <div class="quiz-topics" id="quiz-topics"><!-- topic cards injected by js/quiz.js --></div>
+            </div>
+
+            <!-- Game: flashcards -->
+            <div class="quiz-screen quiz-screen--game" id="quiz-game" hidden>
+                <div class="quiz-game__top">
+                    <button class="quiz-exit" id="quiz-exit" type="button">
+                        <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                        <span data-tr="quiz.back_to_topics">Back to Topics</span>
+                    </button>
+                    <span class="quiz-topic-label" id="quiz-topic-label"></span>
+                    <span class="quiz-counter" id="quiz-counter"></span>
+                </div>
+                <div class="quiz-beads" id="quiz-beads" aria-hidden="true"></div>
+                <button class="quiz-card" id="quiz-card" type="button">
+                    <span class="quiz-card__inner">
+                        <span class="quiz-card__face quiz-card__face--front">
+                            <span class="quiz-card__tag" data-tr="quiz.question_label">Question</span>
+                            <span class="quiz-card__text" id="quiz-question"></span>
+                            <span class="quiz-card__hint">
+                                <i class="fas fa-hand-pointer" aria-hidden="true"></i>
+                                <span data-tr="quiz.tap_to_reveal">Tap to reveal the answer</span>
+                            </span>
+                        </span>
+                        <span class="quiz-card__face quiz-card__face--back">
+                            <span class="quiz-card__tag" data-tr="quiz.answer_label">Answer</span>
+                            <span class="quiz-card__text" id="quiz-answer"></span>
+                        </span>
+                    </span>
+                </button>
+                <div class="quiz-verdict" id="quiz-verdict" hidden>
+                    <button class="quiz-verdict__btn quiz-verdict__btn--no" id="quiz-no" type="button">
+                        <i class="fas fa-xmark" aria-hidden="true"></i>
+                        <span data-tr="quiz.missed_it">Not yet</span>
+                    </button>
+                    <button class="quiz-verdict__btn quiz-verdict__btn--yes" id="quiz-yes" type="button">
+                        <i class="fas fa-check" aria-hidden="true"></i>
+                        <span data-tr="quiz.knew_it">I knew it</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Results: session recap -->
+            <div class="quiz-screen quiz-screen--results" id="quiz-results" hidden>
+                <div class="quiz-results__icon" aria-hidden="true">
+                    <i class="fas fa-om"></i>
+                </div>
+                <h2 data-tr="quiz.results_title">Session Complete</h2>
+                <p class="quiz-results__score" id="quiz-score"></p>
+                <div class="quiz-beads" id="quiz-results-beads" aria-hidden="true"></div>
+                <div class="quiz-results__actions">
+                    <button class="quiz-btn quiz-btn--ghost" id="quiz-again" type="button">
+                        <i class="fas fa-rotate-right" aria-hidden="true"></i>
+                        <span data-tr="quiz.play_again">Play Again</span>
+                    </button>
+                    <button class="quiz-btn quiz-btn--primary" id="quiz-home" type="button">
+                        <i class="fas fa-layer-group" aria-hidden="true"></i>
+                        <span data-tr="quiz.back_to_topics">Back to Topics</span>
+                    </button>
+                </div>
             </div>
         </section>
 
@@ -82,5 +144,6 @@
     </main>
 
     <script type="module" src="js/nav.js"></script>
+    <script type="module" src="js/quiz.js"></script>
 </body>
 </html>
