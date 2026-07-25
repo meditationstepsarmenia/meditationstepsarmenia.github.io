@@ -9,6 +9,11 @@ import { tr } from '../localization.js';
 import { getLang } from './nav.js';
 import { details } from '../page_practices/details.js';
 
+// TEMPORARY TOGGLE: the "In More Detail" section is hidden until its text
+// passes manual review. Set to true to show it again — nothing else needs
+// to change.
+const DETAILS_ENABLED = false;
+
 const CONTENT_LANGS = ['am', 'en', 'ru'];
 
 const track = document.getElementById('details-track');
@@ -101,8 +106,12 @@ const applyLanguage = () => {
     renderPanel();
 };
 
-prevBtn.addEventListener('click', () => track.scrollBy({ left: -track.clientWidth * 0.7, behavior: 'smooth' }));
-nextBtn.addEventListener('click', () => track.scrollBy({ left: track.clientWidth * 0.7, behavior: 'smooth' }));
+if (DETAILS_ENABLED) {
+    prevBtn.addEventListener('click', () => track.scrollBy({ left: -track.clientWidth * 0.7, behavior: 'smooth' }));
+    nextBtn.addEventListener('click', () => track.scrollBy({ left: track.clientWidth * 0.7, behavior: 'smooth' }));
 
-document.addEventListener('ms:languagechange', applyLanguage);
-applyLanguage();
+    document.addEventListener('ms:languagechange', applyLanguage);
+    applyLanguage();
+} else {
+    document.querySelector('.details-section').hidden = true;
+}
