@@ -237,6 +237,7 @@ body::before {
   .page-hero > * { animation: none; }
   .nav-dropdown__menu { transition: none; }
   .quiz-screen--start > *, .quiz-screen--results > * { animation: none; }
+  .details-panel.is-swapped { animation: none; }
   .quiz-card__inner { transition: none; }
   .quiz-card.is-dealt { animation: none; }
   .quiz-verdict { animation: none; }
@@ -1095,6 +1096,13 @@ h2::after {
   opacity: 0.7;
 }
 
+/* Compact variant for subpages with content below the hero */
+.page-hero--compact {
+  min-height: auto;
+  padding-bottom: 1.5rem;
+  gap: 1.1rem;
+}
+
 /* Staggered entrance on page load (no IntersectionObserver needed here) */
 .page-hero > * {
   animation: page-enter 0.9s var(--ease-out) backwards;
@@ -1109,6 +1117,216 @@ h2::after {
     opacity: 0;
     transform: translateY(24px);
   }
+}
+
+/* ============ Practices (page2.html) ============ */
+
+.practices-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: 1.25rem;
+  max-width: 980px;
+  margin-inline: auto;
+  margin-block: 1.5rem 3rem;
+}
+
+.practice-card {
+  padding: 1.6rem 1.5rem;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: transform 0.4s var(--ease-out), border-color 0.4s ease, background 0.4s ease;
+}
+
+.practice-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--c-border-strong);
+  background: var(--c-surface-strong);
+}
+
+.practice-card__head {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 0.9rem;
+}
+
+.practice-card__icon {
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(212, 165, 116, 0.25), rgba(212, 165, 116, 0.08));
+  border: 1px solid var(--c-border-strong);
+  color: var(--c-gold);
+  font-size: 1.1rem;
+}
+
+/* Local override: card headings are left-aligned and carry no divider */
+.practice-card__title {
+  font-size: 1.3rem;
+  text-align: left;
+  margin-bottom: 0;
+  line-height: 1.25;
+}
+
+.practice-card__title::after {
+  display: none;
+}
+
+.practice-card__body {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--c-text-muted);
+}
+
+/* --- "In More Detail" carousel --- */
+
+.details-section {
+  max-width: 980px;
+  margin-inline: auto;
+}
+
+.details-note {
+  display: block;
+  width: fit-content;
+  margin: -0.75rem auto 1.5rem;
+}
+
+.details-carousel {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.details-carousel__track {
+  flex: 1;
+  display: flex;
+  gap: 0.6rem;
+  overflow-x: auto;
+  padding: 0.4rem 0.2rem;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+}
+
+.details-carousel__track::-webkit-scrollbar {
+  display: none;
+}
+
+.details-chip {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 230px;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  line-height: 1.35;
+  font-family: var(--ff-sans);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--c-text-muted);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.details-chip:hover,
+.details-chip:focus-visible {
+  color: var(--c-gold-bright);
+  border-color: var(--c-border-strong);
+}
+
+.details-chip.is-active {
+  color: var(--c-gold-bright);
+  border-color: var(--c-border-strong);
+  background: rgba(212, 165, 116, 0.15);
+}
+
+.details-carousel__arrow {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  color: var(--c-text-dim);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.details-carousel__arrow:hover,
+.details-carousel__arrow:focus-visible {
+  color: var(--c-gold);
+  border-color: var(--c-border-strong);
+}
+
+.details-panel {
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  text-align: left;
+}
+
+.details-panel.is-swapped {
+  animation: page-enter 0.5s var(--ease-out);
+}
+
+.details-panel h3 {
+  font-size: clamp(1.35rem, 2.6vw, 1.7rem);
+  margin-bottom: 1rem;
+}
+
+.details-panel h4 {
+  font-family: var(--ff-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--c-gold);
+  margin: 1.3rem 0 0.5rem;
+}
+
+.details-panel p {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--c-text-muted);
+  margin-bottom: 0.9rem;
+}
+
+.details-panel p:last-child {
+  margin-bottom: 0;
+}
+
+.details-panel strong {
+  color: var(--c-text);
+  font-weight: 600;
+}
+
+.details-panel ul {
+  margin: 0.2rem 0 1rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--c-text-muted);
+}
+
+.details-panel li::marker {
+  color: var(--c-gold);
 }
 
 /* ============ Yoga Quiz (page1.html) ============ */
