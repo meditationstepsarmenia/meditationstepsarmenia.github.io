@@ -115,3 +115,35 @@ if (DETAILS_ENABLED) {
 } else {
     document.querySelector('.details-section').hidden = true;
 }
+
+/* ============ Practice cards accordion ============ */
+// All cards start collapsed; clicking a head expands that card and collapses
+// the others; clicking the open card's head collapses it again.
+
+const cards = [...document.querySelectorAll('.practice-card')];
+
+const setOpen = (card, open) => {
+    card.classList.toggle('is-open', open);
+    card.querySelector('.practice-card__head').setAttribute('aria-expanded', String(open));
+};
+
+for (const card of cards) {
+    const head = card.querySelector('.practice-card__head');
+    head.setAttribute('role', 'button');
+    head.setAttribute('tabindex', '0');
+    head.setAttribute('aria-expanded', 'false');
+
+    const toggle = () => {
+        const wasOpen = card.classList.contains('is-open');
+        for (const c of cards) setOpen(c, false);
+        if (!wasOpen) setOpen(card, true);
+    };
+
+    head.addEventListener('click', toggle);
+    head.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggle();
+        }
+    });
+}

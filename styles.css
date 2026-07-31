@@ -238,6 +238,7 @@ body::before {
   .nav-dropdown__menu { transition: none; }
   .quiz-screen--start > *, .quiz-screen--results > * { animation: none; }
   .details-panel.is-swapped { animation: none; }
+  .practice-card, .practice-card__body, .practice-card__head::after { transition: none; }
   .quiz-card__inner { transition: none; }
   .quiz-card.is-dealt { animation: none; }
   .quiz-verdict { animation: none; }
@@ -1121,36 +1122,65 @@ h2::after {
 
 /* ============ Practices (page2.html) ============ */
 
+/* Accordion: heads stack vertically; one card open at a time (js/practices.js) */
 .practices-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
-  gap: 1.25rem;
-  max-width: 980px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  max-width: 760px;
   margin-inline: auto;
   margin-block: 1.5rem 3rem;
 }
 
 .practice-card {
-  padding: 1.6rem 1.5rem;
+  display: grid;
+  grid-template-rows: auto 0fr;
+  padding: 1.1rem 1.5rem;
   background: var(--c-surface);
   border: 1px solid var(--c-border);
   border-radius: var(--radius);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  transition: transform 0.4s var(--ease-out), border-color 0.4s ease, background 0.4s ease;
+  transition: grid-template-rows 0.45s var(--ease-out), border-color 0.4s ease, background 0.4s ease;
 }
 
 .practice-card:hover {
-  transform: translateY(-4px);
   border-color: var(--c-border-strong);
   background: var(--c-surface-strong);
+}
+
+.practice-card.is-open {
+  grid-template-rows: auto 1fr;
+  border-color: var(--c-border-strong);
 }
 
 .practice-card__head {
   display: flex;
   align-items: center;
   gap: 0.9rem;
-  margin-bottom: 0.9rem;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.practice-card__head:focus-visible {
+  outline: 2px solid var(--c-gold);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+.practice-card__head::after {
+  content: '\f078';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  margin-left: auto;
+  font-size: 0.8rem;
+  color: var(--c-gold);
+  opacity: 0.7;
+  transition: transform 0.45s var(--ease-out);
+}
+
+.practice-card.is-open .practice-card__head::after {
+  transform: rotate(180deg);
 }
 
 .practice-card__icon {
@@ -1182,6 +1212,15 @@ h2::after {
   font-size: 0.95rem;
   line-height: 1.75;
   color: var(--c-text-muted);
+  text-align: justify;
+  overflow: hidden;
+  min-height: 0;
+  margin: 0;
+  transition: margin-top 0.45s var(--ease-out);
+}
+
+.practice-card.is-open .practice-card__body {
+  margin-top: 0.9rem;
 }
 
 /* --- "In More Detail" carousel --- */
