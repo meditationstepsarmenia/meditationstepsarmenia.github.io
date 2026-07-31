@@ -32,9 +32,9 @@ export const tr = {
             fr: "Explorer le Yoga",
         },
     },
-    // Subpage titles & placeholder copy (used via data-tr on page1.html / page2.html)
+    // Subpage titles & placeholder copy (used via data-tr on quiz.html / practices.html)
     page: {
-        page1_title: {
+        quiz_title: {
             en: "Yoga Quiz",
             ru: "Йога-викторина",
             am: "Յոգա վիկտորինա",
@@ -44,7 +44,7 @@ export const tr = {
             de: "Yoga-Quiz",
             fr: "Quiz de Yoga",
         },
-        page2_title: {
+        practices_title: {
             en: "Practices",
             ru: "Практики",
             am: "Պրակտիկաներ",
@@ -65,8 +65,8 @@ export const tr = {
             fr: "Cette page est en préparation — le contenu arrive bientôt.",
         },
     },
-    // Yoga Quiz page UI (page1.html + js/quiz.js). Quiz card CONTENT lives in
-    // page_quotes/*.json and is only available in am/en/ru (en fallback).
+    // Yoga Quiz page UI (quiz.html + js/quiz.js). Quiz card CONTENT lives in
+    // page_quiz/*.json and is only available in am/en/ru (en fallback).
     quiz: {
         intro: {
             en: "Draw a card, take a moment to think, tap it to reveal the answer — then be honest: did you know it?",
@@ -280,7 +280,7 @@ export const tr = {
             fr: "Carte enregistrée",
         },
     },
-    // "Practices" page (page2.html) — static content localized via data-tr
+    // "Practices" page (practices.html) — static content localized via data-tr
     practices: {
         details_title: {
             en: "In More Detail...",

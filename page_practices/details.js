@@ -1,4 +1,4 @@
-// "In More Detail" content for the Practices page (page2.html), curated from
+// "In More Detail" content for the Practices page (practices.html), curated from
 // page_practices/Practices.v1.pdf. Rendered by js/practices.js.
 //
 // Content languages: am / en / ru only (English fallback for other site

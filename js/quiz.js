@@ -1,4 +1,4 @@
-// Yoga Quiz — flashcard game on page1.html. Vanilla JS, no dependencies.
+// Yoga Quiz — flashcard game on quiz.html. Vanilla JS, no dependencies.
 //
 // Flow: topic selection → session of up to 7 randomly drawn cards → the
 // player thinks, taps the card to flip it and reveal the answer (the
@@ -11,7 +11,7 @@
 // the mistakes review). Saved cards persist in localStorage and are managed
 // on a dedicated "Saved Cards" screen (per-item remove + two-step Empty All).
 //
-// Card CONTENT (questions/answers, topic titles) lives in page_quotes/*.json
+// Card CONTENT (questions/answers, topic titles) lives in page_quiz/*.json
 // and is only available in am/en/ru — other site languages fall back to
 // English and a localized notice is shown. UI chrome strings live in tr
 // (all eight languages) and static labels are handled via data-tr by nav.js.
@@ -24,7 +24,7 @@ const STORAGE_KEY = 'msQuizBookmarks';
 
 // Topic registry — add new quiz JSON files here
 const TOPICS = [
-    { file: 'page_quotes/quiz1.json', icon: 'fa-scale-balanced' },
+    { file: 'page_quiz/quiz1.json', icon: 'fa-scale-balanced' },
 ];
 
 const startScreen = document.getElementById('quiz-start');

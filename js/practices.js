@@ -1,4 +1,4 @@
-// "In More Detail..." section on the Practices page (page2.html).
+// "In More Detail..." section on the Practices page (practices.html).
 //
 // Renders a carousel of section titles taken from page_practices/details.js
 // (curated from the source PDF); clicking a title shows that section's full
