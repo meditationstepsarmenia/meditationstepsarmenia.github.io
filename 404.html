@@ -9,16 +9,11 @@
     <script>
         // GitHub Pages serves this page for every missing URL. Redirect to
         // the site's index.html, preserving query parameters (?lang=…) and
-        // the hash. On *.github.io project sites the site root is /<repo>/;
-        // on a custom domain or a local server it is /.
-        (function () {
-            var root = '/';
-            if (location.hostname.endsWith('.github.io')) {
-                var repo = location.pathname.split('/')[1];
-                if (repo) root = '/' + repo + '/';
-            }
-            location.replace(root + 'index.html' + location.search + location.hash);
-        })();
+        // the hash. This site is deployed at the domain root
+        // (https://meditationstepsarmenia.github.io/), so the target is
+        // always /index.html; adjust the path if the site ever moves under
+        // a subdirectory.
+        location.replace('/index.html' + location.search + location.hash);
     </script>
     <!-- Everything below is only visible when JavaScript is disabled. -->
     <style>
