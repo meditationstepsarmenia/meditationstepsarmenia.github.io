@@ -74,7 +74,7 @@ const force_events_sample = {
 // When set to a positive number N, the next N Sundays (including today if
 // it is a Sunday) are appended to `events` as copies of force_events_sample.
 // Set to 0 to display only the events listed in `events`.
-const upcoming_sundays = 1;
+const upcoming_sundays = 0;
 
 const events = [ // additional Events
     // {
